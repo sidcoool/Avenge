@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
+    publishNonDefault true
     defaultConfig {
         applicationId "com.example.lenovo.avenge"
         minSdkVersion 16
