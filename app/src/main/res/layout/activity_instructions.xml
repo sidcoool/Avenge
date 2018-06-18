@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/instructions_inflate">
+
+
+    <TextView
+        android:id="@+id/welcome_note"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#C1C1C1"
+        android:gravity="center"
+        android:text="Welcome to Ultimate Avengers Quiz-"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:padding="5dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome_note"
+        android:layout_centerHorizontal="true"
+        android:background="#C3E8FF"
+        android:gravity="center_horizontal"
+        android:text="***INSTRUCTIONS***"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:padding="9dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/instructions"
+        android:layout_centerHorizontal="true"
+        android:background="#C3E8FF"
+        android:textColor="#000000"
+        android:text="1) You have only one chance to give correct answer."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="9dp"
+        tools:ignore="HardcodedText"
+        android:id="@+id/textView13" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView13"
+        android:layout_centerHorizontal="true"
+        android:background="#C3E8FF"
+        android:textColor="#000000"
+        android:text="2) You can skip a question if you have no idea about it."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="9dp"
+        tools:ignore="HardcodedText"
+        android:id="@+id/textView14" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView14"
+        android:layout_centerHorizontal="true"
+        android:background="#C3E8FF"
+        android:textColor="#000000"
+        android:text="3) You can't go back to a question once answered or skipped."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="9dp"
+        tools:ignore="HardcodedText"
+        android:id="@+id/textView15" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView15"
+        android:layout_centerHorizontal="true"
+        android:background="#C3E8FF"
+        android:textColor="#000000"
+        android:text="4) You'll get +4 for a correct and -1 for a wrong answer...(This marking scheme may remind of something)"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="9dp"
+        tools:ignore="HardcodedText"
+        android:id="@+id/textView16" />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView16"
+    android:layout_centerHorizontal="true"
+    android:background="#C3E8FF"
+    android:textColor="#000000"
+    android:text="5) Your score will be shown at the end of the quiz."
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:padding="9dp"
+    tools:ignore="HardcodedText"
+    android:id="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBox"
+        android:layout_centerHorizontal="true"
+        android:background="#C3E8FF"
+        android:padding="8dp"
+        android:text="ALL THE BEST"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#F5CDFF"
+        android:text="I have read the Intructions"
+        android:textColor="#731040"
+        android:textSize="20sp"
+        android:padding="4dp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

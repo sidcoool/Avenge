@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E57373"
+    android:scrollbars="none"
+    tools:context="com.example.lenovo.avenge.Hero_List">
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Captain America"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/captain"
+        android:id="@+id/captain_america" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iron Man"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/iron_man"
+        android:id="@+id/iron_man"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hulk"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/hulk"
+        android:id="@+id/hulk"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="thor"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/thor"
+        android:id="@+id/thor"/>
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="doctor strange"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/doctor3"
+        android:id="@+id/doctor_strange"/>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="black widow"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/blackwidow2"
+        android:id="@+id/black_widow"/>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="wanda"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/wanda"
+        android:id="@+id/wanda"/>
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="vision"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/vision"
+        android:id="@+id/vision"/>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="spider man"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/spider2"
+        android:id="@+id/spider"/>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="guardians"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/guardians"
+        android:id="@+id/guardians"/>
+</TableLayout>
+
+
+</ScrollView>

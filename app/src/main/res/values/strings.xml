@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Avenge</string>
+    <string name="app_title">A GAME FOR TRUE AVENGER\'S</string>
+
+    <string name="title_activity_fullscreen__score">FullscreenActivity_Score</string>
+    <string name="dummy_button">CONTINUE</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

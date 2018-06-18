@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/quiz_relative_layout"
+    tools:context="com.example.lenovo.avenge.Quiz">
+
+    <ImageView
+        android:id="@+id/hero_img"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/captain3" />
+
+    <TextView
+        android:id="@+id/captain_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/hero_img"
+        android:background="#E8E8E8"
+        android:padding="15dp"
+        android:text="What Is Captain America's Real Name?"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/captain_quiz"
+        android:background="#E4E7D0"
+        android:id="@+id/radiogroup"
+        android:gravity="center"
+        android:theme="@style/Base.AlertDialog.AppCompat.Light">
+
+
+
+
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="385dp"
+            android:layout_height="match_parent"
+            android:text="Scott Summers"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="385dp"
+            android:layout_height="match_parent"
+            android:text="Steve Rogers"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:id="@+id/option3"
+            android:layout_width="385dp"
+            android:layout_height="match_parent"
+            android:text="Clint Barton"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:id="@+id/option4"
+            android:layout_width="385dp"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:text="Bruce Banners"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/next"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/right_arrow" />
+
+</RelativeLayout>
