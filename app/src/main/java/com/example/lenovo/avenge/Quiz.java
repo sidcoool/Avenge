@@ -45,7 +45,39 @@ public class Quiz extends AppCompatActivity {
     int counter1=2,counter2=0;
     boolean encounter=true;
     MediaPlayer instructions_voice_mp3;
-     String question2, question3, question4,question5, option21, option22, option23, option24, option31, option32, option33, option34, option41, option42, option43, option44,option51,option52,option53,option54;
+     String question2, question3, question4,question5, option21, option22, option23, option24, option31, option32,
+             option33, option34, option41, option42, option43, option44,option51,option52,option53,option54;
+
+
+// IRON MAN
+    String [] iron_man_questions = {"First name of Iron Man?",
+        "Who plays Iron Man?",
+        "What is Pepper full name?",
+        "What is \"Pepper\" allergic to?",
+        "What does Tony use in the cave to prevent shrapnel from entering his heart?",
+        "How many tons can Iron Man's suit lift when fully powered?",
+        "Who helped Iron Man escape captivity?",
+        "In the above pic what is Iron Man carrying?"
+
+    };
+
+    String [][] iron_man_options = {{"Tony","John","Peter","Stark"},
+            {"Robert Downey Jr.","Jeff Bridges"," Howard Stark" ,"Samuel L. Jackson"},
+            {"Gwyneth \"Pepper\" Potts" , "Mary \"Pepper\" Potts" , "Virginia \"Pepper\" Potts" , "Mandy\"Pepper\" Potts"},
+            {"Apples", "Strawberries","Iron" ,"Tony's humour"},
+            {"Hydro technology" , "Wind power" , "Arc Reactor technology" , "Avengers Reactor technology"},
+            {"70-75 tons","over 1000 tons","exactly 150 tons","over 100 tons"},
+            {"Tio Minosin","Ho Yinsen","Bin Yinsen","None of these"},
+            {"Rocket","Nuclear Missile","Elecric Pole","Space Ship"}
+};
+
+    int [] correct_ans = {1,1,3,2,3,4,2};
+
+
+
+
+
+
      TextView captain_quiz;
      ImageView hero_img;
      RadioButton option1;
@@ -86,7 +118,7 @@ public class Quiz extends AppCompatActivity {
         option4 = (RadioButton)findViewById(R.id.option4);
         radioGroup = (RadioGroup)findViewById(R.id.radiogroup);
     }
-
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
@@ -564,7 +596,10 @@ public class Quiz extends AppCompatActivity {
 
             case "2":
                 hero_img.setImageResource(R.drawable.iron_man2);
+
                 break;
+
+
         }
 
         }
