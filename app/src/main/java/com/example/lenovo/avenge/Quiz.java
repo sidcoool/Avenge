@@ -45,8 +45,10 @@ public class Quiz extends AppCompatActivity {
     int counter1=2,counter2=0;
     boolean encounter=true;
     MediaPlayer instructions_voice_mp3;
+    //CAPTAIN AMERICA
      String question2, question3, question4,question5, option21, option22, option23, option24, option31, option32,
              option33, option34, option41, option42, option43, option44,option51,option52,option53,option54;
+    int [] captain_america_correct_ans = {2,1,3,2,1};
 
 
 // IRON MAN
@@ -68,10 +70,10 @@ public class Quiz extends AppCompatActivity {
             {"Hydro technology" , "Wind power" , "Arc Reactor technology" , "Avengers Reactor technology"},
             {"70-75 tons","over 1000 tons","exactly 150 tons","over 100 tons"},
             {"Tio Minosin","Ho Yinsen","Bin Yinsen","None of these"},
-            {"Rocket","Nuclear Missile","Elecric Pole","Space Ship"}
+            {"Rocket","Nuclear Missile","Electric Pole","Space Ship"}
 };
 
-    int [] correct_ans = {1,1,3,2,3,4,2};
+    int [] iron_man_correct_ans = {1,1,3,2,3,2,2,2};
 
 
 
@@ -191,12 +193,12 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
-
+        final Intent i = new Intent(Quiz.this,Score.class);
 
 
 
         ImageButton next = (ImageButton)findViewById(R.id.next);
-        Intent in = getIntent();
+        final Intent in = getIntent();
         String stringVal = in.getStringExtra("hero_name");
 
         switch (stringVal) {
@@ -207,60 +209,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i)
                         {
                             case R.id.option1:
-                                option1.setBackgroundColor(Color.RED);
-                                option1.postDelayed(new Runnable() {
-
-                                        @Override
-                                        public void run() {
-                                            option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                        }
-                                    }, 1000);
-                                if(encounter)
-                                {
-                                    counter2=counter2-1;
-                                    encounter=false;
-                                }
+                                set(1,captain_america_correct_ans[0],option1);
                                 break;
 
                             case R.id.option2:
-                                option2.setBackgroundColor(Color.GREEN);
-                                if(encounter)
-                                {
-                                    counter2=counter2+4;
-                                    encounter=false;
-                                }
+                                set(2,captain_america_correct_ans[0],option2);
                                 break;
 
                             case R.id.option3:
-                                option3.setBackgroundColor(Color.RED);
-                                option3.postDelayed(new Runnable() {
-
-                                    @Override
-                                    public void run() {
-                                        option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                    }
-                                }, 1000);
-                                if(encounter)
-                                {
-                                    counter2=counter2-1;
-                                    encounter=false;
-                                }
+                                set(3,captain_america_correct_ans[0],option3);
                                 break;
 
                             case R.id.option4:
-                                option4.setBackgroundColor(Color.RED);
-                                option4.postDelayed(new Runnable() {
-
-                                    @Override
-                                    public void run() {
-                                        option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                    }
-                                }, 1000);
-                                if(encounter)
-                                {
-                                    counter2=counter2-1;
-                                    encounter=false;
-                                }
+                                set(4,captain_america_correct_ans[0],option4);
                                 break;
 
                         }
@@ -294,60 +255,19 @@ public class Quiz extends AppCompatActivity {
                                      switch (i)
                                      {
                                          case R.id.option1:
-                                             option1.setBackgroundColor(Color.GREEN);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2+4;
-                                                 encounter=false;
-                                             }
+                                             set(1,captain_america_correct_ans[1],option1);
                                              break;
 
                                          case R.id.option2:
-                                             option2.setBackgroundColor(Color.RED);
-                                             option2.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(2,captain_america_correct_ans[1],option2);
                                              break;
 
                                          case R.id.option3:
-                                             option3.setBackgroundColor(Color.RED);
-                                             option3.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(3,captain_america_correct_ans[1],option3);
                                              break;
 
                                          case R.id.option4:
-                                             option4.setBackgroundColor(Color.RED);
-                                             option4.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(4,captain_america_correct_ans[1],option4);
                                              break;
                                      }
                                  }
@@ -381,59 +301,19 @@ public class Quiz extends AppCompatActivity {
                                      switch (i)
                                      {
                                          case R.id.option1:
-                                             option1.setBackgroundColor(Color.RED);
-                                             option1.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(1,captain_america_correct_ans[2],option1);
                                              break;
 
                                          case R.id.option2:
-                                             option2.setBackgroundColor(Color.RED);
-                                             option2.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(2,captain_america_correct_ans[2],option2);
                                              break;
 
                                          case R.id.option3:
-                                             option3.setBackgroundColor(Color.GREEN);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2+4;
-                                                 encounter=false;
-                                             }
+                                             set(3,captain_america_correct_ans[2],option3);
                                              break;
-                                         case R.id.option4:
-                                             option4.setBackgroundColor(Color.RED);
-                                             option4.postDelayed(new Runnable() {
 
-                                                 @Override
-                                                 public void run() {
-                                                     option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                         case R.id.option4:
+                                             set(4,captain_america_correct_ans[2],option4);
                                              break;
                                      }
                                  }
@@ -466,62 +346,19 @@ public class Quiz extends AppCompatActivity {
                                      switch (i)
                                      {
                                          case R.id.option1:
-                                             option1.setBackgroundColor(Color.RED);
-                                             option1.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(1,captain_america_correct_ans[3],option1);
                                              break;
 
                                          case R.id.option2:
-
-                                         option2.setBackgroundColor(Color.GREEN);
-                                         if(encounter)
-                                         {
-                                             counter2=counter2+4;
-                                             encounter=false;
-                                         }
-                                         break;
-
+                                             set(2,captain_america_correct_ans[3],option2);
+                                             break;
 
                                          case R.id.option3:
-                                             option3.setBackgroundColor(Color.RED);
-                                             option3.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(3,captain_america_correct_ans[3],option3);
                                              break;
 
                                          case R.id.option4:
-                                             option4.setBackgroundColor(Color.RED);
-                                             option4.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(4,captain_america_correct_ans[3],option4);
                                              break;
                                      }
                                  }
@@ -554,61 +391,19 @@ public class Quiz extends AppCompatActivity {
                                      switch (i)
                                      {
                                          case R.id.option1:
-                                             option1.setBackgroundColor(Color.GREEN);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2+4;
-                                                 encounter=false;
-                                             }
+                                             set(1,captain_america_correct_ans[4],option1);
                                              break;
 
                                          case R.id.option2:
-                                             option2.setBackgroundColor(Color.RED);
-                                             option2.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(2,captain_america_correct_ans[4],option2);
                                              break;
 
-
                                          case R.id.option3:
-                                             option3.setBackgroundColor(Color.RED);
-                                             option3.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(3,captain_america_correct_ans[4],option3);
                                              break;
 
                                          case R.id.option4:
-                                             option4.setBackgroundColor(Color.RED);
-                                             option4.postDelayed(new Runnable() {
-
-                                                 @Override
-                                                 public void run() {
-                                                     option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                 }
-                                             }, 1000);
-                                             if(encounter)
-                                             {
-                                                 counter2=counter2-1;
-                                                 encounter=false;
-                                             }
+                                             set(4,captain_america_correct_ans[4],option4);
                                              break;
                                      }
                                  }
@@ -617,9 +412,8 @@ public class Quiz extends AppCompatActivity {
 
 
                          case 6:
-                             Intent in = new Intent(Quiz.this,Score.class);
-                             in.putExtra("final_score",counter2);
-                             startActivity(in);
+                             i.putExtra("final_score",counter2);
+                             startActivity(i);
                              break;
 
                      }
@@ -661,11 +455,15 @@ public class Quiz extends AppCompatActivity {
                 counter1=2;
                 counter2=0;
                 encounter=true;
+                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 26f);
                 option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
                 option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
                 option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
                 option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                hero_img.setImageResource(R.drawable.captain_shied);
                 captain_quiz.setText(iron_man_questions[0]);
                 option1.setText(iron_man_options[0][0]);
                 option2.setText(iron_man_options[0][1]);
@@ -677,19 +475,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i)
                         {
                             case R.id.option1:
-                                set(1,correct_ans[0],option1);
+                                set(1,iron_man_correct_ans[0],option1);
                                 break;
 
                             case R.id.option2:
-                                set(2,correct_ans[0],option1);
+                                set(2,iron_man_correct_ans[0],option2);
                                 break;
 
                             case R.id.option3:
-                                set(3,correct_ans[0],option3);
+                                set(3,iron_man_correct_ans[0],option3);
                                 break;
 
                             case R.id.option4:
-                                set(4,correct_ans[0],option4);
+                                set(4,iron_man_correct_ans[0],option4);
                                 break;
 
                         }
@@ -703,80 +501,44 @@ public class Quiz extends AppCompatActivity {
                         switch (counter1)
                         {
                             case 2:
-                                //question2 = "What is Cap's shield made from?";
                                 radioGroup.clearCheck();
                                 counter1=counter1+1;
                                 encounter=true;
+                                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 26f);
                                 option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
                                 option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
                                 option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
                                 option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                hero_img.setImageResource(R.drawable.captain_shied);
-                                captain_quiz.setText(question2);
-                                option1.setText(option21);
-                                option2.setText(option22);
-                                option3.setText(option23);
-                                option4.setText(option24);
+                                hero_img.setImageResource(R.drawable.iron_man5);
+                                captain_quiz.setText(iron_man_questions[1]);
+                                option1.setText(iron_man_options[1][0]);
+                                option2.setText(iron_man_options[1][1]);
+                                option3.setText(iron_man_options[1][2]);
+                                option4.setText(iron_man_options[1][3]);
                                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                                     @Override
                                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                                         switch (i)
                                         {
+
                                             case R.id.option1:
-                                                option1.setBackgroundColor(Color.GREEN);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2+4;
-                                                    encounter=false;
-                                                }
+                                                set(1,iron_man_correct_ans[1],option1);
                                                 break;
 
                                             case R.id.option2:
-                                                option2.setBackgroundColor(Color.RED);
-                                                option2.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(2,iron_man_correct_ans[1],option2);
                                                 break;
 
                                             case R.id.option3:
-                                                option3.setBackgroundColor(Color.RED);
-                                                option3.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(3,iron_man_correct_ans[1],option3);
                                                 break;
 
                                             case R.id.option4:
-                                                option4.setBackgroundColor(Color.RED);
-                                                option4.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(4,iron_man_correct_ans[1],option4);
                                                 break;
                                         }
                                     }
@@ -785,7 +547,6 @@ public class Quiz extends AppCompatActivity {
                                 break;
 
                             case 3:
-                                //question3 = "In Marvels Civil War Storyline, Steve Rogers fought for what?";
                                 radioGroup.clearCheck();
                                 counter1=counter1+1;
                                 encounter=true;
@@ -793,76 +554,36 @@ public class Quiz extends AppCompatActivity {
                                 option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
                                 option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
                                 option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f);
-                                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f);
-                                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f);
-                                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f);
-                                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f);
-                                hero_img.setImageResource(R.drawable.captain);
-                                captain_quiz.setText(question3);
-                                option1.setText(option31);
-                                option2.setText(option32);
-                                option3.setText(option33);
-                                option4.setText(option34);
+                                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
+                                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 26f);
+                                hero_img.setImageResource(R.drawable.pepper1);
+                                captain_quiz.setText(iron_man_questions[2]);
+                                option1.setText(iron_man_options[2][0]);
+                                option2.setText(iron_man_options[2][1]);
+                                option3.setText(iron_man_options[2][2]);
+                                option4.setText(iron_man_options[2][3]);
                                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                                     @Override
                                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                                         switch (i)
                                         {
                                             case R.id.option1:
-                                                option1.setBackgroundColor(Color.RED);
-                                                option1.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(1,iron_man_correct_ans[2],option1);
                                                 break;
 
                                             case R.id.option2:
-                                                option2.setBackgroundColor(Color.RED);
-                                                option2.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(2,iron_man_correct_ans[2],option2);
                                                 break;
 
                                             case R.id.option3:
-                                                option3.setBackgroundColor(Color.GREEN);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2+4;
-                                                    encounter=false;
-                                                }
+                                                set(3,iron_man_correct_ans[2],option3);
                                                 break;
-                                            case R.id.option4:
-                                                option4.setBackgroundColor(Color.RED);
-                                                option4.postDelayed(new Runnable() {
 
-                                                    @Override
-                                                    public void run() {
-                                                        option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                            case R.id.option4:
+                                                set(4,iron_man_correct_ans[2],option4);
                                                 break;
                                         }
                                     }
@@ -870,7 +591,6 @@ public class Quiz extends AppCompatActivity {
                                 break;
 
                             case 4:
-                                //question4 = "This Pic is from which Marvel movie?";
                                 radioGroup.clearCheck();
                                 counter1=counter1+1;
                                 encounter=true;
@@ -883,74 +603,31 @@ public class Quiz extends AppCompatActivity {
                                 option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
                                 option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
                                 captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25f);
-                                hero_img.setImageResource(R.drawable.captain_helicopter);
-                                captain_quiz.setText(question4);
-                                option1.setText(option41);
-                                option2.setText(option42);
-                                option3.setText(option43);
-                                option4.setText(option44);
+                                hero_img.setImageResource(R.drawable.pepper2);
+                                captain_quiz.setText(iron_man_questions[3]);
+                                option1.setText(iron_man_options[3][0]);
+                                option2.setText(iron_man_options[3][1]);
+                                option3.setText(iron_man_options[3][2]);
+                                option4.setText(iron_man_options[3][3]);
                                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                                     @Override
                                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                                         switch (i)
                                         {
                                             case R.id.option1:
-                                                option1.setBackgroundColor(Color.RED);
-                                                option1.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(1,iron_man_correct_ans[3],option1);
                                                 break;
 
                                             case R.id.option2:
-
-                                                option2.setBackgroundColor(Color.GREEN);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2+4;
-                                                    encounter=false;
-                                                }
+                                                set(2,iron_man_correct_ans[3],option2);
                                                 break;
 
-
                                             case R.id.option3:
-                                                option3.setBackgroundColor(Color.RED);
-                                                option3.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(3,iron_man_correct_ans[3],option3);
                                                 break;
 
                                             case R.id.option4:
-                                                option4.setBackgroundColor(Color.RED);
-                                                option4.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(4,iron_man_correct_ans[3],option4);
                                                 break;
                                         }
                                     }
@@ -958,7 +635,6 @@ public class Quiz extends AppCompatActivity {
                                 break;
 
                             case 5:
-                                //question5 = "What group of superheroes did Captain America team up with before the Avengers?";
                                 radioGroup.clearCheck();
                                 counter1=counter1+1;
                                 encounter=true;
@@ -966,78 +642,172 @@ public class Quiz extends AppCompatActivity {
                                 option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
                                 option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
                                 option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21f);
-                                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21f);
-                                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21f);
-                                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21f);
-                                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 23f);
-                                hero_img.setImageResource(R.drawable.captian4);
-                                captain_quiz.setText(question5);
-                                option1.setText(option51);
-                                option2.setText(option52);
-                                option3.setText(option53);
-                                option4.setText(option54);
+                                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                hero_img.setImageResource(R.drawable.arc_reactor);
+                                captain_quiz.setText(iron_man_questions[4]);
+                                option1.setText(iron_man_options[4][0]);
+                                option2.setText(iron_man_options[4][1]);
+                                option3.setText(iron_man_options[4][2]);
+                                option4.setText(iron_man_options[4][3]);
                                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                                     @Override
                                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                                         switch (i)
                                         {
+
                                             case R.id.option1:
-                                                option1.setBackgroundColor(Color.GREEN);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2+4;
-                                                    encounter=false;
-                                                }
+                                                set(1,iron_man_correct_ans[4],option1);
                                                 break;
 
                                             case R.id.option2:
-                                                option2.setBackgroundColor(Color.RED);
-                                                option2.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(2,iron_man_correct_ans[4],option2);
                                                 break;
 
-
                                             case R.id.option3:
-                                                option3.setBackgroundColor(Color.RED);
-                                                option3.postDelayed(new Runnable() {
-
-                                                    @Override
-                                                    public void run() {
-                                                        option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                                                set(3,iron_man_correct_ans[4],option3);
                                                 break;
 
                                             case R.id.option4:
-                                                option4.setBackgroundColor(Color.RED);
-                                                option4.postDelayed(new Runnable() {
+                                                set(4,iron_man_correct_ans[4],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
 
-                                                    @Override
-                                                    public void run() {
-                                                        option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
-                                                    }
-                                                }, 1000);
-                                                if(encounter)
-                                                {
-                                                    counter2=counter2-1;
-                                                    encounter=false;
-                                                }
+                            case 6:
+                                radioGroup.clearCheck();
+                                counter1=counter1+1;
+                                encounter=true;
+                                option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                hero_img.setImageResource(R.drawable.iron_man3);
+                                captain_quiz.setText(iron_man_questions[5]);
+                                option1.setText(iron_man_options[5][0]);
+                                option2.setText(iron_man_options[5][1]);
+                                option3.setText(iron_man_options[5][2]);
+                                option4.setText(iron_man_options[5][3]);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+
+                                            case R.id.option1:
+                                                set(1,iron_man_correct_ans[5],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,iron_man_correct_ans[5],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,iron_man_correct_ans[5],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,iron_man_correct_ans[5],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+                            case 7:
+                                radioGroup.clearCheck();
+                                counter1=counter1+1;
+                                encounter=true;
+                                option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 23f);
+                                hero_img.setImageResource(R.drawable.iron_man_old);
+                                captain_quiz.setText(iron_man_questions[6]);
+                                option1.setText(iron_man_options[6][0]);
+                                option2.setText(iron_man_options[6][1]);
+                                option3.setText(iron_man_options[6][2]);
+                                option4.setText(iron_man_options[6][3]);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+
+                                            case R.id.option1:
+                                                set(1,iron_man_correct_ans[6],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,iron_man_correct_ans[6],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,iron_man_correct_ans[6],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,iron_man_correct_ans[6],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+                            case 8:
+                                radioGroup.clearCheck();
+                                counter1=counter1+1;
+                                encounter=true;
+                                option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f);
+                                hero_img.setImageResource(R.drawable.iron_man6);
+                                captain_quiz.setText(iron_man_questions[7]);
+                                option1.setText(iron_man_options[7][0]);
+                                option2.setText(iron_man_options[7][1]);
+                                option3.setText(iron_man_options[7][2]);
+                                option4.setText(iron_man_options[7][3]);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+
+                                            case R.id.option1:
+                                                set(1,iron_man_correct_ans[7],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,iron_man_correct_ans[7],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,iron_man_correct_ans[7],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,iron_man_correct_ans[7],option4);
                                                 break;
                                         }
                                     }
@@ -1045,10 +815,10 @@ public class Quiz extends AppCompatActivity {
                                 break;
 
 
-                            case 6:
-                                Intent in = new Intent(Quiz.this,Score.class);
-                                in.putExtra("final_score",counter2);
-                                startActivity(in);
+
+                            case 9:
+                                i.putExtra("final_score",counter2);
+                                startActivity(i);
                                 break;
 
                         }
