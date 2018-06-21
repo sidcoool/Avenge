@@ -61,14 +61,21 @@ MediaPlayer song2;
         switch (view.getId())
         {
             case R.id.captain_america:
-
                 in.putExtra("hero_name","1");
                 break;
 
             case R.id.iron_man:
-
                 in.putExtra("hero_name","2");
                 break;
+
+            case R.id.hulk:
+                in.putExtra("hero_name","3");
+                break;
+
+            case R.id.spider:
+                in.putExtra("hero_name","4");
+                break;
+
         }
         startActivity(in);
 
