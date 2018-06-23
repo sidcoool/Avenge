@@ -76,6 +76,14 @@ MediaPlayer song2;
                 in.putExtra("hero_name","4");
                 break;
 
+            case R.id.thor:
+                in.putExtra("hero_name","5");
+                break;
+
+            case R.id.doctor_strange:
+                in.putExtra("hero_name","6");
+                break;
+
         }
         startActivity(in);
 
