@@ -54,6 +54,16 @@ public class Quiz extends AppCompatActivity {
     String [][] strange_options;
     int [] strange_correct_ans;
 
+    //BLACK WIDOW
+    String [] natasha_questions;
+    String [][] natasha_options;
+    int [] natasha_correct_ans;
+
+    //GUARDIANS OF GALAXY
+    String [] guardians_questions;
+    String [][] guardians_options;
+    int [] guardians_correct_ans;
+
 
 
      TextView captain_quiz;
@@ -70,7 +80,10 @@ public class Quiz extends AppCompatActivity {
                 "What is Cap's shield made from?",
                 "In Marvels Civil War Storyline, Steve Rogers fought for what?",
                 "This Pic is from which Marvel movie?",
-                "What group of superheroes did Captain America team up with before the Avengers?"
+                "What group of superheroes did Captain America team up with before the Avengers?",
+                "What kind of store was the “front” of the secret scientific facility in Brooklyn where Steve became Captain America?",
+                "During Steve Roger’s military training, what task would allow them to skip the rest of their running for that day?",
+                "Approximately how many years was Captain America frozen for?"
 
         };
 
@@ -78,10 +91,13 @@ public class Quiz extends AppCompatActivity {
                 {"Vibranium", "Titanium", "Iron", "Adamantium"},
                 {"Unifying of heroes under one advanced military unit", "The US Govenment's registration of masked heroes identities", "The freedom of heroes to keep thier identies secret, as had been tradition", "Charges imposed by Government on Avengers"},
                 {"Captin Amerca - Civil War", "Captain America - Winter Soldier", "Avengers - Age of Ultron", "Captain America - The First Avenger"},
-                {"The Invaders", "The Justice League", "The Hailors", "None of These"}
+                {"The Invaders", "The Justice League", "The Hailors", "None of These"},
+                {"Bank", "Bakery", "Antique Shop", "Car dealership"},
+                {"Getting the flag down from the pole", "Answering trivia", "Lifting a car up off the ground", "Hold your breath for three minutes"},
+                {"One hundred", "Twenty", "Fifty", "Seventy"}
         };
 
-        captain_america_correct_ans = new int [] {2,1,3,2,1};
+        captain_america_correct_ans = new int [] {2,1,3,2,1,3,1,4};
 
 
 
@@ -96,7 +112,9 @@ public class Quiz extends AppCompatActivity {
                 "What does Tony use in the cave to prevent shrapnel from entering his heart?",
                 "How many tons can Iron Man's suit lift when fully powered?",
                 "Who helped Iron Man escape captivity?",
-                "In the above pic what is Iron Man carrying?"
+                "In the above pic what is Iron Man carrying?",
+                "What does Tony Stark see in his “hallucination” in Age of Ultron?",
+                "Who is Tony Stark’s personal driver/body guard?"
         };
 
         iron_man_options = new String[][]{
@@ -107,10 +125,12 @@ public class Quiz extends AppCompatActivity {
                 {"Hydro technology" , "Wind power" , "Arc Reactor technology" , "Avengers Reactor technology"},
                 {"70-75 tons","over 1000 tons","exactly 150 tons","over 100 tons"},
                 {"Tio Minosin","Ho Yinsen","Bin Yinsen","None of these"},
-                {"Rocket","Nuclear Missile","Electric Pole","Space Ship"}
+                {"Rocket","Nuclear Missile","Electric Pole","Space Ship"},
+                {"Pepper dead","All of his suits coming to life","His father hugging him","All of the Avengers dead"},
+                {"Happy Hogan","Phil Coulson","Dan David","Gregory Gibson"}
         };
 
-        iron_man_correct_ans = new int[] {1,1,3,2,3,2,2,2};
+        iron_man_correct_ans = new int[] {1,1,3,2,3,2,2,2,4,1};
 
 
         //HULK
@@ -205,17 +225,66 @@ public class Quiz extends AppCompatActivity {
         };
 
         strange_options = new String[][]{
-                {"Artist","Neurosurgeon","Racecar driver","Psychologist"},
-                {"Chiwetel Ejiofor","Benedict Cumberbatch","Scott Adkins","Mads Mikkelsen"},
-                {"2" , "7" , "9" , "11"},
-                {"Dr. Phil","Karl Mordo","Darth Maul","Uri Santano"},
-                {"Thanos","Loki","Dormammu","The Mighty One"},
-                {"Red Skull","Dormammu","Loki","Kaecilius"},
-                { "Book of Kurtagh","Arthur’s Stone","Eye of Agamotto","Oshtur’s Dagger"},
-                { "Book of Cagliostro", "Book of Agamotto" ,  "Ancient book of Dark Word" ,  "Ancient book of Saglio"}
+                {"Artist", "Neurosurgeon", "Racecar driver", "Psychologist"},
+                {"Chiwetel Ejiofor", "Benedict Cumberbatch", "Scott Adkins", "Mads Mikkelsen"},
+                {"2", "7", "9", "11"},
+                {"Dr. Phil", "Karl Mordo", "Darth Maul", "Uri Santano"},
+                {"Thanos", "Loki", "Dormammu", "The Mighty One"},
+                {"Red Skull", "Dormammu", "Loki", "Kaecilius"},
+                {"Book of Kurtagh", "Arthur’s Stone", "Eye of Agamotto", "Oshtur’s Dagger"},
+                {"Book of Cagliostro", "Book of Agamotto", "Ancient book of Dark Word", "Ancient book of Saglio"}
+
         };
 
-        strange_correct_ans = new int[] {2,2,3,2,3,4,3,1};
+                strange_correct_ans = new int[] {2,2,3,2,3,4,3,1};
+
+
+
+
+                //BLACK WIDOW
+                natasha_questions = new String[]{
+                        "What is Black Widow's real name?",
+                        "This pic of Natasha is from which movie?",
+                        "Why can’t Black Widow have children?",
+                        "What is the phrase from Hulk’s lullaby sung by Natasha (Black Widow)?",
+                        "What happens to her at the end of Civil War?"
+                };
+
+                 natasha_options = new String[][]{
+                {"Natasha Romanoff", " Oktober", "Natalie Rushman" , "Natalia Romanova"},
+                {"Avengers", "Avengers: Age of Ulron", "Captain America: Winter Soldier", "Captain America: Civil War"},
+                {"Got shot which caused permanent damage", "In her contract not to", "She was sterilized during her spy training  ", "Birth defect"},
+                {"The Moon Has Risen", "The Sun’s Gettin’ Real Low", "Time To Shut Down", "Welcome To Dawn"},
+                {"She goes to his farm with Clint", "She joins the legal fraction of the Avengers", "She is quartering in the new Avengers headquarters", "She is on the run from the government "}
+        };
+                natasha_correct_ans = new int[] {1,3,3,2,4};
+
+
+
+
+
+                //GUARDIANS OF GALAXY
+                guardians_questions = new String[]{
+                        "In the film, Peter Quill was raised by which group of thieves and smugglers?",
+                        "What is the title of Peter's mixtape?",
+                        "Which prison are the gang taken to?",
+                        "How did Groot turn into Baby Groot?",
+                        "Why was Peter able to hold the Power Stone for a long time?",
+                        "What is the name of this raccoon?",
+                        "Which planet does Ronan The Accuser attack at the end of the first Guardians of the Galaxy film?"
+                };
+
+               guardians_options = new String[][]{
+                {"The Ravagers","The Cavagers","The Metal Soldiers","The Lords"},
+                {"Now That's What I Call a Mixtape!","Awesome Mix Vol. 1","Peter's Little Mixtape","The Best of Ed Sheeran"},
+                {"The Kyln" , "Star Prison" , "The Death Star" , "Galactic Big House"},
+                {"He drank a shrinking potion","He went back in time","He sacrificed his life to save the other Guardians","He used a magic spell"},
+                {"He had a special glove","Because he is half-human","Because it was stuck to his hand","Because he was really good at it"},
+                {"Ricky","Richard","Robert","Rocket"},
+                { "Alderaan","Endor","Xandar","Sakaar"}
+            };
+
+               guardians_correct_ans = new int[] {1,2,1,3,2,4,3};
 
     }
     private void findviewID(){
@@ -547,8 +616,98 @@ public class Quiz extends AppCompatActivity {
                              });
                              break;
 
-
                          case 6:
+                             //What kind of store was the “front” of the secret scientific facility in Brooklyn where Steve became Captain America?
+                             radioGroup.clearCheck();
+                             small_view(4,captain_america_questions,captain_america_options);
+                             hero_img.setImageResource(R.drawable.captain_scientific_facility);
+                             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                 @Override
+                                 public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                     switch (i)
+                                     {
+                                         case R.id.option1:
+                                             set(1,captain_america_correct_ans[5],option1);
+                                             break;
+
+                                         case R.id.option2:
+                                             set(2,captain_america_correct_ans[5],option2);
+                                             break;
+
+                                         case R.id.option3:
+                                             set(3,captain_america_correct_ans[5],option3);
+                                             break;
+
+                                         case R.id.option4:
+                                             set(4,captain_america_correct_ans[5],option4);
+                                             break;
+                                     }
+                                 }
+                             });
+                             break;
+
+                         case 7:
+                             //During Steve Roger’s military training, what task would allow them to skip the rest of their running for that day?
+                             radioGroup.clearCheck();
+                             small_view(5,captain_america_questions,captain_america_options);
+                             hero_img.setImageResource(R.drawable.captain_training);
+                             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                 @Override
+                                 public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                     switch (i)
+                                     {
+                                         case R.id.option1:
+                                             set(1,captain_america_correct_ans[6],option1);
+                                             break;
+
+                                         case R.id.option2:
+                                             set(2,captain_america_correct_ans[6],option2);
+                                             break;
+
+                                         case R.id.option3:
+                                             set(3,captain_america_correct_ans[6],option3);
+                                             break;
+
+                                         case R.id.option4:
+                                             set(4,captain_america_correct_ans[6],option4);
+                                             break;
+                                     }
+                                 }
+                             });
+                             break;
+
+                         case 8:
+                             //Approximately how many years was Captain America frozen for?
+                             radioGroup.clearCheck();
+                             medium_view(6,captain_america_questions,captain_america_options);
+                             hero_img.setImageResource(R.drawable.captain3);
+                             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                 @Override
+                                 public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                     switch (i)
+                                     {
+                                         case R.id.option1:
+                                             set(1,captain_america_correct_ans[7],option1);
+                                             break;
+
+                                         case R.id.option2:
+                                             set(2,captain_america_correct_ans[7],option2);
+                                             break;
+
+                                         case R.id.option3:
+                                             set(3,captain_america_correct_ans[7],option3);
+                                             break;
+
+                                         case R.id.option4:
+                                             set(4,captain_america_correct_ans[7],option4);
+                                             break;
+                                     }
+                                 }
+                             });
+                             break;
+
+
+                         case 9:
                              i.putExtra("final_score",counter2);
                              startActivity(i);
                              break;
@@ -796,7 +955,6 @@ public class Quiz extends AppCompatActivity {
                                 radioGroup.clearCheck();
                                 large_view(6,iron_man_questions,iron_man_options);
                                 hero_img.setImageResource(R.drawable.iron_man_old);
-                                captain_quiz.setText(iron_man_questions[6]);
                                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                                     @Override
                                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -828,11 +986,6 @@ public class Quiz extends AppCompatActivity {
                                 radioGroup.clearCheck();
                                 large_view(7,iron_man_questions,iron_man_options);
                                 hero_img.setImageResource(R.drawable.iron_man6);
-                                captain_quiz.setText(iron_man_questions[7]);
-                                option1.setText(iron_man_options[7][0]);
-                                option2.setText(iron_man_options[7][1]);
-                                option3.setText(iron_man_options[7][2]);
-                                option4.setText(iron_man_options[7][3]);
                                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                                     @Override
                                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -859,9 +1012,70 @@ public class Quiz extends AppCompatActivity {
                                 });
                                 break;
 
-
-
                             case 9:
+                                //What does Tony Stark see in his “hallucination” in Age of Ultron?
+                                radioGroup.clearCheck();
+                                small2_view(8,iron_man_questions,iron_man_options);
+                                hero_img.setImageResource(R.drawable.iron_man_hallucination);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+
+                                            case R.id.option1:
+                                                set(1,iron_man_correct_ans[8],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,iron_man_correct_ans[8],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,iron_man_correct_ans[8],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,iron_man_correct_ans[8],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+                            case 10:
+                                //Who is Tony Stark’s personal driver/body guard?
+                                radioGroup.clearCheck();
+                                medium_view(9,iron_man_questions,iron_man_options);
+                                hero_img.setImageResource(R.drawable.iron_man5);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,iron_man_correct_ans[9],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,iron_man_correct_ans[9],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,iron_man_correct_ans[9],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,iron_man_correct_ans[9],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+
+
+                            case 11:
                                 i.putExtra("final_score",counter2);
                                 startActivity(i);
                                 break;
@@ -2045,7 +2259,499 @@ public class Quiz extends AppCompatActivity {
 
                 break;
 
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            case "7":
+                //What is Black Widow's real name?
+                hero_img.setImageResource(R.drawable.blackwidow);
+                counter1=2;
+                counter2=0;
+                encounter=true;
+                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 26f);
+                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 26f);
+                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 26f);
+                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 26f);
+                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 27f);
+                option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                captain_quiz.setText(natasha_questions[0]);
+                option1.setText(natasha_options[0][0]);
+                option2.setText(natasha_options[0][1]);
+                option3.setText(natasha_options[0][2]);
+                option4.setText(natasha_options[0][3]);
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                        switch (i)
+                        {
+                            case R.id.option1:
+                                set(1,natasha_correct_ans[0],option1);
+                                break;
+
+                            case R.id.option2:
+                                set(2,natasha_correct_ans[0],option2);
+                                break;
+
+                            case R.id.option3:
+                                set(3,natasha_correct_ans[0],option3);
+                                break;
+
+                            case R.id.option4:
+                                set(4,natasha_correct_ans[0],option4);
+                                break;
+
+                        }
+                    }
+                });
+
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        switch (counter1)
+                        {
+                            case 2:
+                                //This pic of Natasha is from which movie?
+                                radioGroup.clearCheck();
+                                medium_view(1,natasha_questions,natasha_options);
+                                hero_img.setImageResource(R.drawable.natasha_winter_soldier);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,natasha_correct_ans[1],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,natasha_correct_ans[1],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,natasha_correct_ans[1],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,natasha_correct_ans[1],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+
+                                break;
+
+                            case 3:
+                                //Why can’t Black Widow have children?
+                                radioGroup.clearCheck();
+                                small2_view(2,natasha_questions,natasha_options);
+                                hero_img.setImageResource(R.drawable.natasha_cant_have_children);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+
+                                            case R.id.option1:
+                                                set(1,natasha_correct_ans[2],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,natasha_correct_ans[2],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,natasha_correct_ans[2],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,natasha_correct_ans[2],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+                            case 4:
+                                //What is the phrase from Hulk’s lullaby sung by Natasha (Black Widow)?
+                                radioGroup.clearCheck();
+                                small2_view(3,natasha_questions,natasha_options);
+                                hero_img.setImageResource(R.drawable.natasha_lullaby);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,natasha_correct_ans[3],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,natasha_correct_ans[3],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,natasha_correct_ans[3],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,natasha_correct_ans[3],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+                            case 5:
+                                //What happens to her at the end of Civil War?
+                                radioGroup.clearCheck();
+                                small_view(4,natasha_questions,natasha_options);
+                                hero_img.setImageResource(R.drawable.blackwidow2);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,natasha_correct_ans[4],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,natasha_correct_ans[4],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,natasha_correct_ans[4],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,natasha_correct_ans[4],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+
+                            case 6:
+                                i.putExtra("final_score",counter2);
+                                startActivity(i);
+                                break;
+
+
+                        }
+
+                    }
+                });
+
+                break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            case "8":
+                //In the film, Peter Quill was raised by which group of thieves and smugglers?
+                hero_img.setImageResource(R.drawable.guardians_1);
+                counter1=2;
+                counter2=0;
+                encounter=true;
+                option1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
+                option2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
+                option3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
+                option4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
+                captain_quiz.setTextSize(TypedValue.COMPLEX_UNIT_SP, 23f);
+                option1.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                option2.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                option3.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                option4.setBackgroundColor(Color.parseColor("#E4E7D0"));
+                captain_quiz.setText(guardians_questions[0]);
+                option1.setText(guardians_options[0][0]);
+                option2.setText(guardians_options[0][1]);
+                option3.setText(guardians_options[0][2]);
+                option4.setText(guardians_options[0][3]);
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                        switch (i)
+                        {
+                            case R.id.option1:
+                                set(1,guardians_correct_ans[0],option1);
+                                break;
+
+                            case R.id.option2:
+                                set(2,guardians_correct_ans[0],option2);
+                                break;
+
+                            case R.id.option3:
+                                set(3,guardians_correct_ans[0],option3);
+                                break;
+
+                            case R.id.option4:
+                                set(4,guardians_correct_ans[0],option4);
+                                break;
+
+                        }
+                    }
+                });
+
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        switch (counter1)
+                        {
+                            case 2:
+                                //What is the title of Peter's mixtape?
+                                radioGroup.clearCheck();
+                                medium_view(1,guardians_questions,guardians_options);
+                                hero_img.setImageResource(R.drawable.guardians_2);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,guardians_correct_ans[1],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,guardians_correct_ans[1],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,guardians_correct_ans[1],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,guardians_correct_ans[1],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+
+                                break;
+
+                            case 3:
+                                //Which prison are the gang taken to?
+                                radioGroup.clearCheck();
+                                large_view(2,guardians_questions,guardians_options);
+                                hero_img.setImageResource(R.drawable.guardians_3);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+
+                                            case R.id.option1:
+                                                set(1,guardians_correct_ans[2],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,guardians_correct_ans[2],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,guardians_correct_ans[2],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,guardians_correct_ans[2],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+                            case 4:
+                                //How did Groot turn into Baby Groot?
+                                radioGroup.clearCheck();
+                                medium_view(3,guardians_questions,guardians_options);
+                                hero_img.setImageResource(R.drawable.guardians_4);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,guardians_correct_ans[3],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,guardians_correct_ans[3],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,guardians_correct_ans[3],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,guardians_correct_ans[3],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+                            case 5:
+                                //Why was Peter able to hold the Power Stone for a long time?
+                                radioGroup.clearCheck();
+                                small2_view(4,guardians_questions,guardians_options);
+                                hero_img.setImageResource(R.drawable.guardians_5);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,guardians_correct_ans[4],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,guardians_correct_ans[4],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,guardians_correct_ans[4],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,guardians_correct_ans[4],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+
+                            case 6:
+                                //What is the name of this raccoon?
+                                radioGroup.clearCheck();
+                                large_view(5,guardians_questions,guardians_options);
+                                hero_img.setImageResource(R.drawable.guardians_6);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,guardians_correct_ans[5],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,guardians_correct_ans[5],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,guardians_correct_ans[5],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,guardians_correct_ans[5],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+
+                            case 7:
+                                //Which planet does Ronan The Accuser attack at the end of the first Guardians of the Galaxy film?
+                                radioGroup.clearCheck();
+                                small2_view(6,guardians_questions,guardians_options);
+                                hero_img.setImageResource(R.drawable.guardians_7);
+                                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i)
+                                        {
+                                            case R.id.option1:
+                                                set(1,guardians_correct_ans[6],option1);
+                                                break;
+
+                                            case R.id.option2:
+                                                set(2,guardians_correct_ans[6],option2);
+                                                break;
+
+                                            case R.id.option3:
+                                                set(3,guardians_correct_ans[6],option3);
+                                                break;
+
+                                            case R.id.option4:
+                                                set(4,guardians_correct_ans[6],option4);
+                                                break;
+                                        }
+                                    }
+                                });
+                                break;
+
+
+                            case 8:
+                                i.putExtra("final_score",counter2);
+                                startActivity(i);
+                                break;
+
+
+                        }
+
+                    }
+                });
+
+                break;
+
+
+
+
+
+
+                        }
 
         }
 

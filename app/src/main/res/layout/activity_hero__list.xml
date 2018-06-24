@@ -127,7 +127,7 @@
         app:srcCompat="@drawable/blackwidow2"
         android:id="@+id/black_widow"/>
 
-    <TextView
+  <!--  <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
         android:scaleType="fitXY"
         android:layout_marginBottom="50dp"
         app:srcCompat="@drawable/vision"
-        android:id="@+id/vision"/>
+        android:id="@+id/vision"/>   -->
 
     <TextView
         android:id="@+id/textView11"

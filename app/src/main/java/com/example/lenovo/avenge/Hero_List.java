@@ -30,8 +30,8 @@ MediaPlayer song2;
         ImageView black_widow = (ImageView) findViewById(R.id.black_widow);
         ImageView doctor_strange = (ImageView) findViewById(R.id.doctor_strange);
         ImageView thor = (ImageView) findViewById(R.id.thor);
-        ImageView wanda = (ImageView) findViewById(R.id.wanda);
-        ImageView vision = (ImageView) findViewById(R.id.vision);
+       // ImageView wanda = (ImageView) findViewById(R.id.wanda);
+       // ImageView vision = (ImageView) findViewById(R.id.vision);
         ImageView spider = (ImageView) findViewById(R.id.spider);
 
         captain_america.setOnClickListener(this);
@@ -41,8 +41,8 @@ MediaPlayer song2;
         black_widow.setOnClickListener(this);
         doctor_strange.setOnClickListener(this);
         thor.setOnClickListener(this);
-        wanda.setOnClickListener(this);
-        vision.setOnClickListener(this);
+      //  wanda.setOnClickListener(this);
+      //  vision.setOnClickListener(this);
         spider.setOnClickListener(this);
 
         LayoutInflater lf = getLayoutInflater();
@@ -82,6 +82,14 @@ MediaPlayer song2;
 
             case R.id.doctor_strange:
                 in.putExtra("hero_name","6");
+                break;
+
+            case R.id.black_widow:
+                in.putExtra("hero_name","7");
+                break;
+
+            case R.id.guardians:
+                in.putExtra("hero_name","8");
                 break;
 
         }
