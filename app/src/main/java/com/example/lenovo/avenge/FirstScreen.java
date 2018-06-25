@@ -76,4 +76,14 @@ public class FirstScreen extends AppCompatActivity {
             return view;
         }
     }
-}
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        aven_theme.release();
+        finish();
+    }
+
+
+    }
+
