@@ -37,7 +37,7 @@ public class FirstScreen extends AppCompatActivity {
                 Intent in = new Intent(FirstScreen.this,Hero_List.class);
                 startActivity(in);
             }
-        }, 4000);
+        }, 6000);
 
 
     }

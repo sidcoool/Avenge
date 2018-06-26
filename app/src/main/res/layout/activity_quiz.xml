@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/hero_img"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="160dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -86,12 +86,14 @@
 
     </RadioGroup>
 
-    <ImageButton
-        android:id="@+id/next"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/right_arrow" />
+        android:background="@color/colorPrimary"
+        app:itemIconTint="#FFFFFF"
+        app:itemTextColor="#FFFFFF"
+        app:menu="@menu/bottom_navigation" />
 
 </RelativeLayout>
