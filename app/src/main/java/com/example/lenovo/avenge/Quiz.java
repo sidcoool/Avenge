@@ -3,7 +3,10 @@ package com.example.lenovo.avenge;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.os.Build;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -22,7 +26,8 @@ import android.widget.TextView;
 
 public class Quiz extends AppCompatActivity {
 
-
+    private long timeWhenStopped = 0;
+Chronometer chronometer;
     int counter1=1,counter2=0;
     boolean encounter=true;
     MediaPlayer instructions_voice_mp3;
@@ -666,6 +671,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
             case 9:
                 i.putExtra("final_score",counter2);
+                i.putExtra("hero_name","Captain America");
                 startActivity(i);
                 break;
 
@@ -959,6 +965,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
             case 11:
                 i.putExtra("final_score",counter2);
+                i.putExtra("hero_name","Iron Man");
                 startActivity(i);
                 break;
 
@@ -1158,6 +1165,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
         case 8:
             i.putExtra("final_score",counter2);
+            i.putExtra("hero_name","Hulk");
             startActivity(i);
             break;
 
@@ -1354,6 +1362,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
             case 8:
                 i.putExtra("final_score",counter2);
+                i.putExtra("hero_name","Spider Man");
                 startActivity(i);
                 break;
 
@@ -1610,6 +1619,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
             case 10:
                 i.putExtra("final_score",counter2);
+                i.putExtra("hero_name","Thor");
                 startActivity(i);
                 break;
 
@@ -1836,6 +1846,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
             case 9:
                 i.putExtra("final_score",counter2);
+                i.putExtra("hero_name","doctor_strange");
                 startActivity(i);
                 break;
 
@@ -1973,6 +1984,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
             case 6:
                 i.putExtra("final_score",counter2);
+                i.putExtra("hero_name","Black Widow");
                 startActivity(i);
                 break;
 
@@ -2173,6 +2185,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
             case 8:
                 i.putExtra("final_score",counter2);
+                i.putExtra("hero_name","Guardians of Galaxy");
                 startActivity(i);
                 break;
 
@@ -2190,6 +2203,7 @@ Intent i = new Intent(Quiz.this,Score.class);
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -2224,10 +2238,23 @@ Intent i = new Intent(Quiz.this,Score.class);
                     }, 500);
                 }
             }
-        });  */
-
-
-
+        });
+        Chronometer chrono  = (Chronometer) findViewById(R.id.chronometer);
+       chrono.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener(){
+            @Override
+            public void onChronometerTick(Chronometer chronometer) {
+                long time = SystemClock.elapsedRealtime() - chronometer.getBase();
+                int h   = (int)(time /3600000);
+                int m = (int)(time - h*3600000)/60000;
+                int s= (int)(time - h*3600000- m*60000)/1000 ;
+                String t = (h < 10 ? "0"+h: h)+":"+(m < 10 ? "0"+m: m)+":"+ (s < 10 ? "0"+s: s);
+                chronometer.setText(t);
+            }
+        });
+        chrono.setBase(SystemClock.elapsedRealtime());
+        chrono.setText("00:00:00");
+        chrono.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
+        chrono.start();*/
 
 
         final Intent in = getIntent();

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HighScores"
+    android:background="#4E0000">
+
+
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="420dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/score_back">
+        <!--<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/table">
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="NAME"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="SCORE"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+</TableLayout> -->
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#C5D7C3"
+            android:textSize="28sp" />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:fontFamily="serif"
+        android:text="marvel  fans"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="#C6C6C6"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+</RelativeLayout>

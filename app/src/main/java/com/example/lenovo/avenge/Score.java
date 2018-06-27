@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -69,5 +70,18 @@ MediaPlayer strange_circle_sound;
         }, 7000);
 
 
+    }
+
+    public void save(View v)
+    {
+        EditText user_name = (EditText)findViewById(R.id.user_name);
+        Intent getINFO = getIntent();
+        int score = getINFO.getIntExtra("final_score",0);
+        String hero_name = getINFO.getStringExtra("hero_name");
+        Intent in = new Intent(this,HighScores.class);
+        in.putExtra("score",score);
+        in.putExtra("usr_name",user_name.getText().toString());
+        in.putExtra("hero_name",hero_name);
+        startActivity(in);
     }
 }
