@@ -30,7 +30,7 @@ public class Quiz extends AppCompatActivity {
 Chronometer chronometer;
     int counter1=1,counter2=0;
     boolean encounter=true;
-    MediaPlayer instructions_voice_mp3;
+   // MediaPlayer instructions_voice_mp3;
     BottomNavigationView navigation;
 
     //CAPTAIN AMERICA
@@ -335,11 +335,13 @@ Chronometer chronometer;
         }
     }
     public void set(int j,int k,TextView option) {
-        if(j==k)
-            right(option);
-        else
-            wrong(option);
+
+            if (j == k)
+                right(option);
+            else
+                wrong(option);
     }
+
 
 
 
@@ -462,29 +464,29 @@ Intent i = new Intent(Quiz.this,Score.class);
                 radioGroup.clearCheck();
                 large_view(0,captain_america_questions,captain_america_options);
                 hero_img.setImageResource(R.drawable.captain_shied);
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        switch (i)
-                        {
-                            case R.id.option1:
-                                set(1,captain_america_correct_ans[1],option1);
-                                break;
 
-                            case R.id.option2:
-                                set(2,captain_america_correct_ans[1],option2);
-                                break;
+                    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                            switch (i) {
+                                case R.id.option1:
+                                    set(1, captain_america_correct_ans[1], option1);
+                                    break;
 
-                            case R.id.option3:
-                                set(3,captain_america_correct_ans[1],option3);
-                                break;
+                                case R.id.option2:
+                                    set(2, captain_america_correct_ans[1], option2);
+                                    break;
 
-                            case R.id.option4:
-                                set(4,captain_america_correct_ans[1],option4);
-                                break;
+                                case R.id.option3:
+                                    set(3, captain_america_correct_ans[1], option3);
+                                    break;
+
+                                case R.id.option4:
+                                    set(4, captain_america_correct_ans[1], option4);
+                                    break;
+                            }
                         }
-                    }
-                });
+                    });
 
                 break;
 
@@ -493,29 +495,30 @@ Intent i = new Intent(Quiz.this,Score.class);
                 radioGroup.clearCheck();
                 small_view(1,captain_america_questions,captain_america_options);
                 hero_img.setImageResource(R.drawable.captain);
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        switch (i)
-                        {
-                            case R.id.option1:
-                                set(1,captain_america_correct_ans[2],option1);
-                                break;
 
-                            case R.id.option2:
-                                set(2,captain_america_correct_ans[2],option2);
-                                break;
+                    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                            switch (i) {
+                                case R.id.option1:
+                                    set(1, captain_america_correct_ans[2], option1);
+                                    break;
 
-                            case R.id.option3:
-                                set(3,captain_america_correct_ans[2],option3);
-                                break;
+                                case R.id.option2:
+                                    set(2, captain_america_correct_ans[2], option2);
+                                    break;
 
-                            case R.id.option4:
-                                set(4,captain_america_correct_ans[2],option4);
-                                break;
+                                case R.id.option3:
+                                    set(3, captain_america_correct_ans[2], option3);
+                                    break;
+
+                                case R.id.option4:
+                                    set(4, captain_america_correct_ans[2], option4);
+                                    break;
+                            }
                         }
-                    }
-                });
+                    });
+
                 break;
 
             case 4:
@@ -523,29 +526,30 @@ Intent i = new Intent(Quiz.this,Score.class);
                 radioGroup.clearCheck();
                 small2_view(2,captain_america_questions,captain_america_options);
                 hero_img.setImageResource(R.drawable.captain_helicopter);
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        switch (i)
-                        {
-                            case R.id.option1:
-                                set(1,captain_america_correct_ans[3],option1);
-                                break;
 
-                            case R.id.option2:
-                                set(2,captain_america_correct_ans[3],option2);
-                                break;
+                    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                            switch (i) {
+                                case R.id.option1:
+                                    set(1, captain_america_correct_ans[3], option1);
+                                    break;
 
-                            case R.id.option3:
-                                set(3,captain_america_correct_ans[3],option3);
-                                break;
+                                case R.id.option2:
+                                    set(2, captain_america_correct_ans[3], option2);
+                                    break;
 
-                            case R.id.option4:
-                                set(4,captain_america_correct_ans[3],option4);
-                                break;
+                                case R.id.option3:
+                                    set(3, captain_america_correct_ans[3], option3);
+                                    break;
+
+                                case R.id.option4:
+                                    set(4, captain_america_correct_ans[3], option4);
+                                    break;
+                            }
                         }
-                    }
-                });
+                    });
+
                 break;
 
             case 5:
@@ -553,29 +557,30 @@ Intent i = new Intent(Quiz.this,Score.class);
                 radioGroup.clearCheck();
                 small2_view(3,captain_america_questions,captain_america_options);
                 hero_img.setImageResource(R.drawable.captian4);
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        switch (i)
-                        {
-                            case R.id.option1:
-                                set(1,captain_america_correct_ans[4],option1);
-                                break;
 
-                            case R.id.option2:
-                                set(2,captain_america_correct_ans[4],option2);
-                                break;
+                    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                            switch (i) {
+                                case R.id.option1:
+                                    set(1, captain_america_correct_ans[4], option1);
+                                    break;
 
-                            case R.id.option3:
-                                set(3,captain_america_correct_ans[4],option3);
-                                break;
+                                case R.id.option2:
+                                    set(2, captain_america_correct_ans[4], option2);
+                                    break;
 
-                            case R.id.option4:
-                                set(4,captain_america_correct_ans[4],option4);
-                                break;
+                                case R.id.option3:
+                                    set(3, captain_america_correct_ans[4], option3);
+                                    break;
+
+                                case R.id.option4:
+                                    set(4, captain_america_correct_ans[4], option4);
+                                    break;
+                            }
                         }
-                    }
-                });
+                    });
+
                 break;
 
             case 6:
@@ -583,59 +588,61 @@ Intent i = new Intent(Quiz.this,Score.class);
                 radioGroup.clearCheck();
                 small_view(4,captain_america_questions,captain_america_options);
                 hero_img.setImageResource(R.drawable.captain_scientific_facility);
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        switch (i)
-                        {
-                            case R.id.option1:
-                                set(1,captain_america_correct_ans[5],option1);
-                                break;
 
-                            case R.id.option2:
-                                set(2,captain_america_correct_ans[5],option2);
-                                break;
+                    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                            switch (i) {
+                                case R.id.option1:
+                                    set(1, captain_america_correct_ans[5], option1);
+                                    break;
 
-                            case R.id.option3:
-                                set(3,captain_america_correct_ans[5],option3);
-                                break;
+                                case R.id.option2:
+                                    set(2, captain_america_correct_ans[5], option2);
+                                    break;
 
-                            case R.id.option4:
-                                set(4,captain_america_correct_ans[5],option4);
-                                break;
+                                case R.id.option3:
+                                    set(3, captain_america_correct_ans[5], option3);
+                                    break;
+
+                                case R.id.option4:
+                                    set(4, captain_america_correct_ans[5], option4);
+                                    break;
+                            }
                         }
-                    }
-                });
-                break;
+                    });
+
+                    break;
 
             case 7:
                 //During Steve Roger’s military training, what task would allow them to skip the rest of their running for that day?
                 radioGroup.clearCheck();
                 small_view(5,captain_america_questions,captain_america_options);
                 hero_img.setImageResource(R.drawable.captain_training);
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        switch (i)
-                        {
-                            case R.id.option1:
-                                set(1,captain_america_correct_ans[6],option1);
-                                break;
 
-                            case R.id.option2:
-                                set(2,captain_america_correct_ans[6],option2);
-                                break;
+                    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                            switch (i) {
+                                case R.id.option1:
+                                    set(1, captain_america_correct_ans[6], option1);
+                                    break;
 
-                            case R.id.option3:
-                                set(3,captain_america_correct_ans[6],option3);
-                                break;
+                                case R.id.option2:
+                                    set(2, captain_america_correct_ans[6], option2);
+                                    break;
 
-                            case R.id.option4:
-                                set(4,captain_america_correct_ans[6],option4);
-                                break;
+                                case R.id.option3:
+                                    set(3, captain_america_correct_ans[6], option3);
+                                    break;
+
+                                case R.id.option4:
+                                    set(4, captain_america_correct_ans[6], option4);
+                                    break;
+                            }
                         }
-                    }
-                });
+                    });
+
                 break;
 
             case 8:
@@ -643,29 +650,30 @@ Intent i = new Intent(Quiz.this,Score.class);
                 radioGroup.clearCheck();
                 medium_view(6,captain_america_questions,captain_america_options);
                 hero_img.setImageResource(R.drawable.captain3);
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        switch (i)
-                        {
-                            case R.id.option1:
-                                set(1,captain_america_correct_ans[7],option1);
-                                break;
 
-                            case R.id.option2:
-                                set(2,captain_america_correct_ans[7],option2);
-                                break;
+                    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                            switch (i) {
+                                case R.id.option1:
+                                    set(1, captain_america_correct_ans[7], option1);
+                                    break;
 
-                            case R.id.option3:
-                                set(3,captain_america_correct_ans[7],option3);
-                                break;
+                                case R.id.option2:
+                                    set(2, captain_america_correct_ans[7], option2);
+                                    break;
 
-                            case R.id.option4:
-                                set(4,captain_america_correct_ans[7],option4);
-                                break;
+                                case R.id.option3:
+                                    set(3, captain_america_correct_ans[7], option3);
+                                    break;
+
+                                case R.id.option4:
+                                    set(4, captain_america_correct_ans[7], option4);
+                                    break;
+                            }
                         }
-                    }
-                });
+                    });
+
                 break;
 
 
@@ -2840,5 +2848,9 @@ Intent i = new Intent(Quiz.this,Score.class);
                         }
 
         }
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }

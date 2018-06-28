@@ -84,4 +84,9 @@ MediaPlayer strange_circle_sound;
         in.putExtra("hero_name",hero_name);
         startActivity(in);
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }

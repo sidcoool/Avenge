@@ -12,6 +12,7 @@
         <activity android:name=".Hero_List" />
         <activity android:name=".Quiz" />
         <activity android:name=".Score" />
+        <activity android:name=".HighScores2"/>
         <activity android:name=".FirstScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HighScores"></activity>
+        <activity android:name=".HighScores" />
+        <activity android:name=".Menu"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

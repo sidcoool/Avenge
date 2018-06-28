@@ -34,7 +34,7 @@ public class FirstScreen extends AppCompatActivity {
             @Override
             public void run() {
                 aven_theme.release();
-                Intent in = new Intent(FirstScreen.this,Hero_List.class);
+                Intent in = new Intent(FirstScreen.this,Menu.class);
                 startActivity(in);
             }
         }, 6000);

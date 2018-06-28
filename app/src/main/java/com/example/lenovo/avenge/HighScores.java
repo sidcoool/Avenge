@@ -18,13 +18,18 @@ public class HighScores extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_scores);
+
+        DataBaseHelper myDb = new DataBaseHelper(this);
+
+
         Intent in = getIntent();
         String user_name = in.getStringExtra("usr_name");
         String hero_name = in.getStringExtra("hero_name");
         int score = in.getIntExtra("score",0);
         String score_string = Integer.toString(score);
 
-      DataBaseHelper myDb = new DataBaseHelper(this);
+
+
         Boolean result = myDb.insertData(user_name,hero_name,score_string);
         if(result){
             Toast.makeText(this,"SAVED SUCCESSFULLY",Toast.LENGTH_SHORT).show();

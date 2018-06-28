@@ -47,7 +47,7 @@ MediaPlayer song2;
 
         LayoutInflater lf = getLayoutInflater();
         View toast_layout = lf.inflate(R.layout.custom_toast, (ViewGroup)findViewById(R.id.custom_layoutID));
-        Toast toast1 = makeText(this,"Toast:Gravity.TOP",Toast.LENGTH_LONG);
+        Toast toast1 = makeText(this,"Toast:Gravity.TOP",Toast.LENGTH_SHORT);
         toast1.setGravity(Gravity.CENTER,0,0);
         toast1.setView(toast_layout);
         toast1.show();
