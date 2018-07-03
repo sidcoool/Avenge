@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "Score.db";
+    public static final String DATABASE_NAME = "Score.db";
     private static  final String TABLE_NAME = "Score_table";
 
     private static final  String COL_1 = "NAME";
@@ -48,4 +48,6 @@ db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         SQLiteDatabase db = this.getWritableDatabase();
         return db.rawQuery("Select * from " + TABLE_NAME,null);
     }
+
+
 }

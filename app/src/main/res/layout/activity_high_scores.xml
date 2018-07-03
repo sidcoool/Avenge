@@ -61,4 +61,15 @@
         android:textColor="#C6C6C6"
         android:textSize="40sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/delet_record"
+        android:layout_width="175dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_back"
+        android:text="DELETE  RECORD"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </RelativeLayout>

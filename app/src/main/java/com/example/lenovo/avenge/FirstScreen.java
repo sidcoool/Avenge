@@ -37,7 +37,7 @@ public class FirstScreen extends AppCompatActivity {
                 Intent in = new Intent(FirstScreen.this,Menu.class);
                 startActivity(in);
             }
-        }, 6000);
+        }, 4000);
 
 
     }

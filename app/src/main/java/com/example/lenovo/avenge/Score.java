@@ -41,7 +41,7 @@ MediaPlayer strange_circle_sound;
 // Play the animation sets one after another
         AnimatorSet set3 = new AnimatorSet();
         set3.playSequentially(set1, set2);
-        set3.setDuration(2500);
+        set3.setDuration(1500);
         set3.start();
 
                     strange.postDelayed(new Runnable() {
@@ -53,10 +53,10 @@ MediaPlayer strange_circle_sound;
                             ObjectAnimator anim6 = ObjectAnimator.ofFloat(score_image, "scaleY", 40.0f);
                             AnimatorSet set4 = new AnimatorSet();
                             set4.playTogether(anim5, anim6);
-                            set4.setDuration(6500);
+                            set4.setDuration(4500);
                             set4.start();
                         }
-                    }, 2500);
+                    }, 1500);
 
         strange.postDelayed(new Runnable() {
 
@@ -67,13 +67,14 @@ MediaPlayer strange_circle_sound;
                 int final_score = in.getIntExtra("final_score",0);
                 score.setText(String.format("%d", final_score));
             }
-        }, 7000);
+        }, 5000);
 
 
     }
 
     public void save(View v)
     {
+        strange_circle_sound.release();
         EditText user_name = (EditText)findViewById(R.id.user_name);
         Intent getINFO = getIntent();
         int score = getINFO.getIntExtra("final_score",0);
@@ -88,5 +89,10 @@ MediaPlayer strange_circle_sound;
     protected void onPause() {
         super.onPause();
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, Hero_List.class));
     }
 }
