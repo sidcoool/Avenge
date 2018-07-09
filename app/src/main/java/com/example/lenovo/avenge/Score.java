@@ -79,10 +79,12 @@ MediaPlayer strange_circle_sound;
         Intent getINFO = getIntent();
         int score = getINFO.getIntExtra("final_score",0);
         String hero_name = getINFO.getStringExtra("hero_name");
+        String timeTaken = getINFO.getStringExtra("time");
         Intent in = new Intent(this,HighScores.class);
         in.putExtra("score",score);
         in.putExtra("usr_name",user_name.getText().toString());
         in.putExtra("hero_name",hero_name);
+        in.putExtra("time",timeTaken);
         startActivity(in);
     }
     @Override

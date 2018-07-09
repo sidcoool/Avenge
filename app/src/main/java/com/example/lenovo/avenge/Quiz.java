@@ -1,5 +1,6 @@
 package com.example.lenovo.avenge;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -26,8 +27,7 @@ import android.widget.TextView;
 
 public class Quiz extends AppCompatActivity {
 
-    private long timeWhenStopped = 0;
-    Chronometer chronometer;
+    Chronometer timeElapsed;
     int counter1 = 1, counter2 = 0;
     boolean encounter = true;
     // MediaPlayer instructions_voice_mp3;
@@ -81,7 +81,6 @@ public class Quiz extends AppCompatActivity {
     RadioButton option3;
     RadioButton option4;
     RadioGroup radioGroup;
-
 
     private void ques_and_ans() {
         //CAPTAIN AMERICA
@@ -285,7 +284,6 @@ public class Quiz extends AppCompatActivity {
         guardians_correct_ans = new int[]{1, 2, 1, 3, 2, 4, 3};
 
     }
-
     private void findviewID() {
         captain_quiz = (TextView) findViewById(R.id.captain_quiz);
         hero_img = (ImageView) findViewById(R.id.hero_img);
@@ -295,6 +293,7 @@ public class Quiz extends AppCompatActivity {
         option4 = (RadioButton) findViewById(R.id.option4);
         radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
     }
 
 
@@ -305,7 +304,6 @@ public class Quiz extends AppCompatActivity {
             encounter = false;
         }
     }
-
     public void wrong(final TextView option) {
         option.setBackgroundColor(Color.RED);
         option.postDelayed(new Runnable() {
@@ -320,7 +318,6 @@ public class Quiz extends AppCompatActivity {
             encounter = false;
         }
     }
-
     public void set(int j, int k, TextView option) {
 
         if (j == k)
@@ -351,7 +348,6 @@ public class Quiz extends AppCompatActivity {
         option3.setText(hero_o[index1][2]);
         option4.setText(hero_o[index1][3]);
     }
-
     public void medium_view(int index1, String[] hero_q, String[][] hero_o) {
 
         ques_and_ans();
@@ -373,7 +369,6 @@ public class Quiz extends AppCompatActivity {
         option3.setText(hero_o[index1][2]);
         option4.setText(hero_o[index1][3]);
     }
-
     public void medium2_view(int index1, String[] hero_q, String[][] hero_o) {
 
         ques_and_ans();
@@ -395,7 +390,6 @@ public class Quiz extends AppCompatActivity {
         option3.setText(hero_o[index1][2]);
         option4.setText(hero_o[index1][3]);
     }
-
     public void small_view(int index1, String[] hero_q, String[][] hero_o) {
 
         ques_and_ans();
@@ -417,7 +411,6 @@ public class Quiz extends AppCompatActivity {
         option3.setText(hero_o[index1][2]);
         option4.setText(hero_o[index1][3]);
     }
-
     public void small2_view(int index1, String[] hero_q, String[][] hero_o) {
 
         ques_and_ans();
@@ -668,13 +661,15 @@ public class Quiz extends AppCompatActivity {
             case 9:
                 i.putExtra("final_score", counter2);
                 i.putExtra("hero_name", "Captain America");
+                double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
+                String timeTaken = Double.toString(elapsedMillis);
+                i.putExtra("time",timeTaken);
                 startActivity(i);
                 break;
 
         }
 
     }
-
     public void iron_man_quiz() {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
@@ -952,13 +947,15 @@ public class Quiz extends AppCompatActivity {
             case 11:
                 i.putExtra("final_score", counter2);
                 i.putExtra("hero_name", "Iron Man");
+                double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
+                String timeTaken = Double.toString(elapsedMillis);
+                i.putExtra("time",timeTaken);
                 startActivity(i);
                 break;
 
         }
 
     }
-
     public void hulk_quiz() {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
@@ -1146,12 +1143,14 @@ public class Quiz extends AppCompatActivity {
             case 8:
                 i.putExtra("final_score", counter2);
                 i.putExtra("hero_name", "Hulk");
+                double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
+                String timeTaken = Double.toString(elapsedMillis);
+                i.putExtra("time",timeTaken);
                 startActivity(i);
                 break;
 
         }
     }
-
     public void spider_man_quiz() {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
@@ -1337,12 +1336,14 @@ public class Quiz extends AppCompatActivity {
             case 8:
                 i.putExtra("final_score", counter2);
                 i.putExtra("hero_name", "Spider Man");
+                double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
+                String timeTaken = Double.toString(elapsedMillis);
+                i.putExtra("time",timeTaken);
                 startActivity(i);
                 break;
 
         }
     }
-
     public void thor_quiz() {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
@@ -1586,12 +1587,14 @@ public class Quiz extends AppCompatActivity {
             case 10:
                 i.putExtra("final_score", counter2);
                 i.putExtra("hero_name", "Thor");
+                double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
+                String timeTaken = Double.toString(elapsedMillis);
+                i.putExtra("time",timeTaken);
                 startActivity(i);
                 break;
 
         }
     }
-
     public void doctor_strange_quiz() {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
@@ -1806,12 +1809,14 @@ public class Quiz extends AppCompatActivity {
             case 9:
                 i.putExtra("final_score", counter2);
                 i.putExtra("hero_name", "doctor_strange");
+                double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
+                String timeTaken = Double.toString(elapsedMillis);
+                i.putExtra("time",timeTaken);
                 startActivity(i);
                 break;
 
         }
     }
-
     public void black_widow_quiz() {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
@@ -1940,13 +1945,15 @@ public class Quiz extends AppCompatActivity {
             case 6:
                 i.putExtra("final_score", counter2);
                 i.putExtra("hero_name", "Black Widow");
+                double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
+                String timeTaken = Double.toString(elapsedMillis);
+                i.putExtra("time",timeTaken);
                 startActivity(i);
                 break;
 
 
         }
     }
-
     public void guardians_quiz() {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
@@ -2135,6 +2142,9 @@ public class Quiz extends AppCompatActivity {
             case 8:
                 i.putExtra("final_score", counter2);
                 i.putExtra("hero_name", "Guardians of Galaxy");
+                double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
+                String timeTaken = Double.toString(elapsedMillis);
+                i.putExtra("time",timeTaken);
                 startActivity(i);
                 break;
 
@@ -2144,7 +2154,7 @@ public class Quiz extends AppCompatActivity {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+   // @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -2153,7 +2163,26 @@ public class Quiz extends AppCompatActivity {
         ques_and_ans();
         findviewID();
 
-    /*   LayoutInflater lf = getLayoutInflater();
+        timeElapsed = (Chronometer) findViewById(R.id.chronomete);
+        if (timeElapsed != null) {
+            timeElapsed.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+                @Override
+                public void onChronometerTick(Chronometer cArg) {
+                    long time = SystemClock.elapsedRealtime() - cArg.getBase();
+                    int h = (int) (time / 3600000);
+                    int m = (int) (time - h * 3600000) / 60000;
+                    int s = (int) (time - h * 3600000 - m * 60000) / 1000;
+                    String hh = h < 10 ? "0" + h : h + "";
+                    String mm = m < 10 ? "0" + m : m + "";
+                    String ss = s < 10 ? "0" + s : s + "";
+                    cArg.setText(hh + ":" + mm + ":" + ss);
+                }
+            });
+            timeElapsed.setBase(SystemClock.elapsedRealtime());
+            timeElapsed.start();
+
+        }
+     /* LayoutInflater lf = getLayoutInflater();
         final View instruct = lf.inflate(R.layout.activity_instructions, (ViewGroup)findViewById(R.id.instructions_inflate));
          final RelativeLayout r = (RelativeLayout)findViewById(R.id.quiz_relative_layout);
         r.addView(instruct);

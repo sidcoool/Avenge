@@ -84,14 +84,6 @@
 
     </RadioGroup>
 
-    <Chronometer
-        android:id="@+id/chronometer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:countDown="true"
-        android:textSize="25sp"
-        tools:targetApi="n" />
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
@@ -101,5 +93,16 @@
         app:itemIconTint="#FFFFFF"
         app:itemTextColor="#FFFFFF"
         app:menu="@menu/bottom_navigation" />
+
+    <Chronometer
+        android:id="@+id/chronomete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/captain_quiz"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp"
+        android:textSize="30sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="32dp" />
 
 </RelativeLayout>
