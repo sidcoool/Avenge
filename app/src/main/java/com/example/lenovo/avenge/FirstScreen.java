@@ -23,7 +23,7 @@ public class FirstScreen extends AppCompatActivity {
         setContentView(R.layout.activity_first_screen);
         aven_theme = MediaPlayer.create(FirstScreen.this,R.raw.avengers_theme_song);
         aven_theme.start();
-        AdapterViewFlipper heroFlipper = (AdapterViewFlipper) findViewById(R.id.Flipping_Heroes);
+        AdapterViewFlipper heroFlipper = findViewById(R.id.Flipping_Heroes);
 
         Flipper adapter = new Flipper(this,IMAGES);
         heroFlipper.setAdapter(adapter);
@@ -71,7 +71,7 @@ public class FirstScreen extends AppCompatActivity {
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
              view = inflater.inflate(R.layout.flipper_items,null);
-            ImageView v = (ImageView)view.findViewById(R.id.flip);
+            ImageView v = view.findViewById(R.id.flip);
             v.setImageResource(images[i]);
             return view;
         }

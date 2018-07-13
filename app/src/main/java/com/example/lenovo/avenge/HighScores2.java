@@ -28,17 +28,17 @@ public class HighScores2 extends AppCompatActivity {
                 stringBuffer.append("QUIZ: " + "\"" + res.getString(1)  + "\"" + "\n");
                 stringBuffer.append("SCORE: " + res.getString(2) + "\n\n");
             }
-            TextView tv = (TextView)findViewById(R.id.result);
+            TextView tv = findViewById(R.id.result);
             tv.setText(stringBuffer.toString());
         }
-        Button delete = (Button) findViewById(R.id.delet_record);
+        Button delete = findViewById(R.id.delet_record);
         delete.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 myDb.close();
                 HighScores2.this.deleteDatabase(DataBaseHelper.DATABASE_NAME);
-                TextView tv = (TextView)findViewById(R.id.result);
+                TextView tv = findViewById(R.id.result);
                 tv.setText(null);
             }
 

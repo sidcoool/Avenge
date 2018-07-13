@@ -17,7 +17,7 @@ public class InstructionsPage extends AppCompatActivity {
         instructions_voice_mp3 = MediaPlayer.create(InstructionsPage.this,R.raw.instruction_voice);
         instructions_voice_mp3.start();
 
-        final CheckBox continue_quiz= (CheckBox)findViewById(R.id.checkBox);
+        final CheckBox continue_quiz= findViewById(R.id.checkBox);
         continue_quiz.setOnClickListener(new View.OnClickListener() {
 
             @Override

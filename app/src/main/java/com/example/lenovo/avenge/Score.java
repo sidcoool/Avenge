@@ -19,10 +19,10 @@ MediaPlayer strange_circle_sound;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        final ImageView strange = (ImageView)findViewById(R.id.strange);
-        final ImageView score_image = (ImageView)findViewById(R.id.score_circle);
-        final TextView score = (TextView)findViewById(R.id.score);
-        final TextView SCORE = (TextView)findViewById(R.id.SCORE);
+        final ImageView strange = findViewById(R.id.strange);
+        final ImageView score_image = findViewById(R.id.score_circle);
+        final TextView score = findViewById(R.id.score);
+        final TextView SCORE = findViewById(R.id.SCORE);
 
 
         strange_circle_sound = MediaPlayer.create(Score.this,R.raw.strange_circle_sound_effect);
@@ -75,7 +75,7 @@ MediaPlayer strange_circle_sound;
     public void save(View v)
     {
         strange_circle_sound.release();
-        EditText user_name = (EditText)findViewById(R.id.user_name);
+        EditText user_name = findViewById(R.id.user_name);
         Intent getINFO = getIntent();
         int score = getINFO.getIntExtra("final_score",0);
         String hero_name = getINFO.getStringExtra("hero_name");
@@ -95,6 +95,7 @@ MediaPlayer strange_circle_sound;
 
     @Override
     public void onBackPressed() {
+        strange_circle_sound.release();
         startActivity(new Intent(this, Hero_List.class));
     }
 }

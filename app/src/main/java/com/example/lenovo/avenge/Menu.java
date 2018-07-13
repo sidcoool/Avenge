@@ -21,9 +21,9 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        Button takequiz = (Button)findViewById(R.id.takequiz);
-        Button instu = (Button)findViewById(R.id.instru);
-        Button highscore = (Button)findViewById(R.id.highscore);
+        Button takequiz = findViewById(R.id.takequiz);
+        Button instu = findViewById(R.id.instru);
+        Button highscore = findViewById(R.id.highscore);
 
         takequiz.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -24,16 +24,16 @@ public class Hero_List extends AppCompatActivity implements View.OnClickListener
         song2 = MediaPlayer.create(Hero_List.this, R.raw.theme_song_2);
         song2.start();
 
-        ImageView captain_america = (ImageView) findViewById(R.id.captain_america);
-        ImageView iron_man = (ImageView) findViewById(R.id.iron_man);
-        ImageView hulk = (ImageView) findViewById(R.id.hulk);
-        ImageView guardians = (ImageView) findViewById(R.id.guardians);
-        ImageView black_widow = (ImageView) findViewById(R.id.black_widow);
-        ImageView doctor_strange = (ImageView) findViewById(R.id.doctor_strange);
-        ImageView thor = (ImageView) findViewById(R.id.thor);
+        ImageView captain_america = findViewById(R.id.captain_america);
+        ImageView iron_man = findViewById(R.id.iron_man);
+        ImageView hulk = findViewById(R.id.hulk);
+        ImageView guardians = findViewById(R.id.guardians);
+        ImageView black_widow = findViewById(R.id.black_widow);
+        ImageView doctor_strange = findViewById(R.id.doctor_strange);
+        ImageView thor = findViewById(R.id.thor);
         // ImageView wanda = (ImageView) findViewById(R.id.wanda);
         // ImageView vision = (ImageView) findViewById(R.id.vision);
-        ImageView spider = (ImageView) findViewById(R.id.spider);
+        ImageView spider = findViewById(R.id.spider);
 
         captain_america.setOnClickListener(this);
         iron_man.setOnClickListener(this);

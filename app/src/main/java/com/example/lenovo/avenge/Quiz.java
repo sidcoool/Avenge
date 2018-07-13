@@ -24,8 +24,15 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.app.Activity;
+import android.content.Context;
+import android.media.AudioManager;
+import android.media.SoundPool;
+
+
 
 public class Quiz extends AppCompatActivity {
+
 
     Chronometer timeElapsed;
     int counter1 = 1, counter2 = 0;
@@ -285,20 +292,21 @@ public class Quiz extends AppCompatActivity {
 
     }
     private void findviewID() {
-        captain_quiz = (TextView) findViewById(R.id.captain_quiz);
-        hero_img = (ImageView) findViewById(R.id.hero_img);
-        option1 = (RadioButton) findViewById(R.id.option1);
-        option2 = (RadioButton) findViewById(R.id.option2);
-        option3 = (RadioButton) findViewById(R.id.option3);
-        option4 = (RadioButton) findViewById(R.id.option4);
-        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
-        navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        captain_quiz = findViewById(R.id.captain_quiz);
+        hero_img = findViewById(R.id.hero_img);
+        option1 = findViewById(R.id.option1);
+        option2 = findViewById(R.id.option2);
+        option3 = findViewById(R.id.option3);
+        option4 = findViewById(R.id.option4);
+        radioGroup = findViewById(R.id.radiogroup);
+        navigation = findViewById(R.id.navigation);
 
     }
 
 
     public void right(TextView option) {
         option.setBackgroundColor(Color.GREEN);
+
         if (encounter) {
             counter2 = counter2 + 4;
             encounter = false;
@@ -306,6 +314,7 @@ public class Quiz extends AppCompatActivity {
     }
     public void wrong(final TextView option) {
         option.setBackgroundColor(Color.RED);
+
         option.postDelayed(new Runnable() {
 
             @Override
@@ -318,12 +327,18 @@ public class Quiz extends AppCompatActivity {
             encounter = false;
         }
     }
-    public void set(int j, int k, TextView option) {
+    public void set(int j, int k, TextView option,MediaPlayer c,MediaPlayer w) {
 
         if (j == k)
-            right(option);
+        {
+            c.start();
+        right(option);
+        }
         else
+        {
+            w.start();
             wrong(option);
+    }
     }
 
 
@@ -434,7 +449,7 @@ public class Quiz extends AppCompatActivity {
     }
 
 
-    public void captain_america_quiz() {
+    public void captain_america_quiz(final MediaPlayer c, final MediaPlayer w) {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
         findviewID();
@@ -451,19 +466,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, captain_america_correct_ans[1], option1);
+                                set(1, captain_america_correct_ans[1], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, captain_america_correct_ans[1], option2);
+                                set(2, captain_america_correct_ans[1], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, captain_america_correct_ans[1], option3);
+                                set(3, captain_america_correct_ans[1], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, captain_america_correct_ans[1], option4);
+                                set(4, captain_america_correct_ans[1], option4,c,w);
                                 break;
                         }
                     }
@@ -482,19 +497,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, captain_america_correct_ans[2], option1);
+                                set(1, captain_america_correct_ans[2], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, captain_america_correct_ans[2], option2);
+                                set(2, captain_america_correct_ans[2], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, captain_america_correct_ans[2], option3);
+                                set(3, captain_america_correct_ans[2], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, captain_america_correct_ans[2], option4);
+                                set(4, captain_america_correct_ans[2], option4,c,w);
                                 break;
                         }
                     }
@@ -513,19 +528,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, captain_america_correct_ans[3], option1);
+                                set(1, captain_america_correct_ans[3], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, captain_america_correct_ans[3], option2);
+                                set(2, captain_america_correct_ans[3], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, captain_america_correct_ans[3], option3);
+                                set(3, captain_america_correct_ans[3], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, captain_america_correct_ans[3], option4);
+                                set(4, captain_america_correct_ans[3], option4,c,w);
                                 break;
                         }
                     }
@@ -544,19 +559,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, captain_america_correct_ans[4], option1);
+                                set(1, captain_america_correct_ans[4], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, captain_america_correct_ans[4], option2);
+                                set(2, captain_america_correct_ans[4], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, captain_america_correct_ans[4], option3);
+                                set(3, captain_america_correct_ans[4], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, captain_america_correct_ans[4], option4);
+                                set(4, captain_america_correct_ans[4], option4,c,w);
                                 break;
                         }
                     }
@@ -575,19 +590,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, captain_america_correct_ans[5], option1);
+                                set(1, captain_america_correct_ans[5], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, captain_america_correct_ans[5], option2);
+                                set(2, captain_america_correct_ans[5], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, captain_america_correct_ans[5], option3);
+                                set(3, captain_america_correct_ans[5], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, captain_america_correct_ans[5], option4);
+                                set(4, captain_america_correct_ans[5], option4,c,w);
                                 break;
                         }
                     }
@@ -606,19 +621,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, captain_america_correct_ans[6], option1);
+                                set(1, captain_america_correct_ans[6], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, captain_america_correct_ans[6], option2);
+                                set(2, captain_america_correct_ans[6], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, captain_america_correct_ans[6], option3);
+                                set(3, captain_america_correct_ans[6], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, captain_america_correct_ans[6], option4);
+                                set(4, captain_america_correct_ans[6], option4,c,w);
                                 break;
                         }
                     }
@@ -637,19 +652,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, captain_america_correct_ans[7], option1);
+                                set(1, captain_america_correct_ans[7], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, captain_america_correct_ans[7], option2);
+                                set(2, captain_america_correct_ans[7], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, captain_america_correct_ans[7], option3);
+                                set(3, captain_america_correct_ans[7], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, captain_america_correct_ans[7], option4);
+                                set(4, captain_america_correct_ans[7], option4,c,w);
                                 break;
                         }
                     }
@@ -670,7 +685,7 @@ public class Quiz extends AppCompatActivity {
         }
 
     }
-    public void iron_man_quiz() {
+    public void iron_man_quiz(final MediaPlayer c, final MediaPlayer w) {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
         findviewID();
@@ -687,19 +702,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[1], option1);
+                                set(1, iron_man_correct_ans[1], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[1], option2);
+                                set(2, iron_man_correct_ans[1], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[1], option3);
+                                set(3, iron_man_correct_ans[1], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[1], option4);
+                                set(4, iron_man_correct_ans[1], option4,c,w);
                                 break;
                         }
                     }
@@ -717,19 +732,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[2], option1);
+                                set(1, iron_man_correct_ans[2], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[2], option2);
+                                set(2, iron_man_correct_ans[2], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[2], option3);
+                                set(3, iron_man_correct_ans[2], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[2], option4);
+                                set(4, iron_man_correct_ans[2], option4,c,w);
                                 break;
                         }
                     }
@@ -746,19 +761,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[3], option1);
+                                set(1, iron_man_correct_ans[3], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[3], option2);
+                                set(2, iron_man_correct_ans[3], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[3], option3);
+                                set(3, iron_man_correct_ans[3], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[3], option4);
+                                set(4, iron_man_correct_ans[3], option4,c,w);
                                 break;
                         }
                     }
@@ -775,19 +790,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[4], option1);
+                                set(1, iron_man_correct_ans[4], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[4], option2);
+                                set(2, iron_man_correct_ans[4], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[4], option3);
+                                set(3, iron_man_correct_ans[4], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[4], option4);
+                                set(4, iron_man_correct_ans[4], option4,c,w);
                                 break;
                         }
                     }
@@ -805,19 +820,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[5], option1);
+                                set(1, iron_man_correct_ans[5], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[5], option2);
+                                set(2, iron_man_correct_ans[5], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[5], option3);
+                                set(3, iron_man_correct_ans[5], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[5], option4);
+                                set(4, iron_man_correct_ans[5], option4,c,w);
                                 break;
                         }
                     }
@@ -835,19 +850,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[6], option1);
+                                set(1, iron_man_correct_ans[6], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[6], option2);
+                                set(2, iron_man_correct_ans[6], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[6], option3);
+                                set(3, iron_man_correct_ans[6], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[6], option4);
+                                set(4, iron_man_correct_ans[6], option4,c,w);
                                 break;
                         }
                     }
@@ -865,19 +880,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[7], option1);
+                                set(1, iron_man_correct_ans[7], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[7], option2);
+                                set(2, iron_man_correct_ans[7], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[7], option3);
+                                set(3, iron_man_correct_ans[7], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[7], option4);
+                                set(4, iron_man_correct_ans[7], option4,c,w);
                                 break;
                         }
                     }
@@ -895,19 +910,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[8], option1);
+                                set(1, iron_man_correct_ans[8], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[8], option2);
+                                set(2, iron_man_correct_ans[8], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[8], option3);
+                                set(3, iron_man_correct_ans[8], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[8], option4);
+                                set(4, iron_man_correct_ans[8], option4,c,w);
                                 break;
                         }
                     }
@@ -924,19 +939,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[9], option1);
+                                set(1, iron_man_correct_ans[9], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[9], option2);
+                                set(2, iron_man_correct_ans[9], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[9], option3);
+                                set(3, iron_man_correct_ans[9], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[9], option4);
+                                set(4, iron_man_correct_ans[9], option4,c,w);
                                 break;
                         }
                     }
@@ -956,7 +971,7 @@ public class Quiz extends AppCompatActivity {
         }
 
     }
-    public void hulk_quiz() {
+    public void hulk_quiz(final MediaPlayer c, final MediaPlayer w) {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
         findviewID();
@@ -973,19 +988,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, hulk_correct_ans[1], option1);
+                                set(1, hulk_correct_ans[1], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, hulk_correct_ans[1], option2);
+                                set(2, hulk_correct_ans[1], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, hulk_correct_ans[1], option3);
+                                set(3, hulk_correct_ans[1], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, hulk_correct_ans[1], option4);
+                                set(4, hulk_correct_ans[1], option4,c,w);
                                 break;
                         }
                     }
@@ -1004,19 +1019,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, hulk_correct_ans[2], option1);
+                                set(1, hulk_correct_ans[2], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, hulk_correct_ans[2], option2);
+                                set(2, hulk_correct_ans[2], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, hulk_correct_ans[2], option3);
+                                set(3, hulk_correct_ans[2], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, hulk_correct_ans[2], option4);
+                                set(4, hulk_correct_ans[2], option4,c,w);
                                 break;
                         }
                     }
@@ -1033,19 +1048,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, hulk_correct_ans[3], option1);
+                                set(1, hulk_correct_ans[3], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, hulk_correct_ans[3], option2);
+                                set(2, hulk_correct_ans[3], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, hulk_correct_ans[3], option3);
+                                set(3, hulk_correct_ans[3], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, hulk_correct_ans[3], option4);
+                                set(4, hulk_correct_ans[3], option4,c,w);
                                 break;
                         }
                     }
@@ -1062,19 +1077,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, hulk_correct_ans[4], option1);
+                                set(1, hulk_correct_ans[4], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, hulk_correct_ans[4], option2);
+                                set(2, hulk_correct_ans[4], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, hulk_correct_ans[4], option3);
+                                set(3, hulk_correct_ans[4], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, hulk_correct_ans[4], option4);
+                                set(4, hulk_correct_ans[4], option4,c,w);
                                 break;
                         }
                     }
@@ -1091,19 +1106,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, hulk_correct_ans[5], option1);
+                                set(1, hulk_correct_ans[5], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, hulk_correct_ans[5], option2);
+                                set(2, hulk_correct_ans[5], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, hulk_correct_ans[5], option3);
+                                set(3, hulk_correct_ans[5], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, hulk_correct_ans[5], option4);
+                                set(4, hulk_correct_ans[5], option4,c,w);
                                 break;
                         }
                     }
@@ -1121,19 +1136,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, hulk_correct_ans[6], option1);
+                                set(1, hulk_correct_ans[6], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, hulk_correct_ans[6], option2);
+                                set(2, hulk_correct_ans[6], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, hulk_correct_ans[6], option3);
+                                set(3, hulk_correct_ans[6], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, hulk_correct_ans[6], option4);
+                                set(4, hulk_correct_ans[6], option4,c,w);
                                 break;
                         }
                     }
@@ -1151,7 +1166,7 @@ public class Quiz extends AppCompatActivity {
 
         }
     }
-    public void spider_man_quiz() {
+    public void spider_man_quiz(final MediaPlayer c, final MediaPlayer w) {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
         findviewID();
@@ -1167,19 +1182,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, spider_correct_ans[1], option1);
+                                set(1, spider_correct_ans[1], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, spider_correct_ans[1], option2);
+                                set(2, spider_correct_ans[1], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, spider_correct_ans[1], option3);
+                                set(3, spider_correct_ans[1], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, spider_correct_ans[1], option4);
+                                set(4, spider_correct_ans[1], option4,c,w);
                                 break;
                         }
                     }
@@ -1198,19 +1213,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, spider_correct_ans[2], option1);
+                                set(1, spider_correct_ans[2], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, spider_correct_ans[2], option2);
+                                set(2, spider_correct_ans[2], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, spider_correct_ans[2], option3);
+                                set(3, spider_correct_ans[2], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, spider_correct_ans[2], option4);
+                                set(4, spider_correct_ans[2], option4,c,w);
                                 break;
                         }
                     }
@@ -1227,19 +1242,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, spider_correct_ans[3], option1);
+                                set(1, spider_correct_ans[3], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, spider_correct_ans[3], option2);
+                                set(2, spider_correct_ans[3], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, spider_correct_ans[3], option3);
+                                set(3, spider_correct_ans[3], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, spider_correct_ans[3], option4);
+                                set(4, spider_correct_ans[3], option4,c,w);
                                 break;
                         }
                     }
@@ -1256,19 +1271,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, spider_correct_ans[4], option1);
+                                set(1, spider_correct_ans[4], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, spider_correct_ans[4], option2);
+                                set(2, spider_correct_ans[4], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, spider_correct_ans[4], option3);
+                                set(3, spider_correct_ans[4], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, spider_correct_ans[4], option4);
+                                set(4, spider_correct_ans[4], option4,c,w);
                                 break;
                         }
                     }
@@ -1285,19 +1300,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, spider_correct_ans[5], option1);
+                                set(1, spider_correct_ans[5], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, spider_correct_ans[5], option2);
+                                set(2, spider_correct_ans[5], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, spider_correct_ans[5], option3);
+                                set(3, spider_correct_ans[5], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, spider_correct_ans[5], option4);
+                                set(4, spider_correct_ans[5], option4,c,w);
                                 break;
                         }
                     }
@@ -1314,19 +1329,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, spider_correct_ans[6], option1);
+                                set(1, spider_correct_ans[6], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, spider_correct_ans[6], option2);
+                                set(2, spider_correct_ans[6], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, spider_correct_ans[6], option3);
+                                set(3, spider_correct_ans[6], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, spider_correct_ans[6], option4);
+                                set(4, spider_correct_ans[6], option4,c,w);
                                 break;
                         }
                     }
@@ -1344,7 +1359,7 @@ public class Quiz extends AppCompatActivity {
 
         }
     }
-    public void thor_quiz() {
+    public void thor_quiz(final MediaPlayer c, final MediaPlayer w) {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
         findviewID();
@@ -1360,19 +1375,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, thor_correct_ans[1], option1);
+                                set(1, thor_correct_ans[1], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[1], option2);
+                                set(2, thor_correct_ans[1], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[1], option3);
+                                set(3, thor_correct_ans[1], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[1], option4);
+                                set(4, thor_correct_ans[1], option4,c,w);
                                 break;
                         }
                     }
@@ -1391,19 +1406,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, thor_correct_ans[2], option1);
+                                set(1, thor_correct_ans[2], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[2], option2);
+                                set(2, thor_correct_ans[2], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[2], option3);
+                                set(3, thor_correct_ans[2], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[2], option4);
+                                set(4, thor_correct_ans[2], option4,c,w);
                                 break;
                         }
                     }
@@ -1420,19 +1435,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, thor_correct_ans[3], option1);
+                                set(1, thor_correct_ans[3], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[3], option2);
+                                set(2, thor_correct_ans[3], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[3], option3);
+                                set(3, thor_correct_ans[3], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[3], option4);
+                                set(4, thor_correct_ans[3], option4,c,w);
                                 break;
                         }
                     }
@@ -1449,19 +1464,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, thor_correct_ans[4], option1);
+                                set(1, thor_correct_ans[4], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[4], option2);
+                                set(2, thor_correct_ans[4], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[4], option3);
+                                set(3, thor_correct_ans[4], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[4], option4);
+                                set(4, thor_correct_ans[4], option4,c,w);
                                 break;
                         }
                     }
@@ -1478,19 +1493,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, thor_correct_ans[5], option1);
+                                set(1, thor_correct_ans[5], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[5], option2);
+                                set(2, thor_correct_ans[5], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[5], option3);
+                                set(3, thor_correct_ans[5], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[5], option4);
+                                set(4, thor_correct_ans[5], option4,c,w);
                                 break;
                         }
                     }
@@ -1507,19 +1522,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, thor_correct_ans[6], option1);
+                                set(1, thor_correct_ans[6], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[6], option2);
+                                set(2, thor_correct_ans[6], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[6], option3);
+                                set(3, thor_correct_ans[6], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[6], option4);
+                                set(4, thor_correct_ans[6], option4,c,w);
                                 break;
                         }
                     }
@@ -1536,19 +1551,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, thor_correct_ans[7], option1);
+                                set(1, thor_correct_ans[7], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[7], option2);
+                                set(2, thor_correct_ans[7], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[7], option3);
+                                set(3, thor_correct_ans[7], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[7], option4);
+                                set(4, thor_correct_ans[7], option4,c,w);
                                 break;
                         }
                     }
@@ -1565,19 +1580,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, thor_correct_ans[8], option1);
+                                set(1, thor_correct_ans[8], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[8], option2);
+                                set(2, thor_correct_ans[8], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[8], option3);
+                                set(3, thor_correct_ans[8], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[8], option4);
+                                set(4, thor_correct_ans[8], option4,c,w);
                                 break;
                         }
                     }
@@ -1595,7 +1610,7 @@ public class Quiz extends AppCompatActivity {
 
         }
     }
-    public void doctor_strange_quiz() {
+    public void doctor_strange_quiz(final MediaPlayer c, final MediaPlayer w) {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
         findviewID();
@@ -1611,19 +1626,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, strange_correct_ans[1], option1);
+                                set(1, strange_correct_ans[1], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, strange_correct_ans[1], option2);
+                                set(2, strange_correct_ans[1], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, strange_correct_ans[1], option3);
+                                set(3, strange_correct_ans[1], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, strange_correct_ans[1], option4);
+                                set(4, strange_correct_ans[1], option4,c,w);
                                 break;
                         }
                     }
@@ -1642,19 +1657,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, strange_correct_ans[2], option1);
+                                set(1, strange_correct_ans[2], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, strange_correct_ans[2], option2);
+                                set(2, strange_correct_ans[2], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, strange_correct_ans[2], option3);
+                                set(3, strange_correct_ans[2], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, strange_correct_ans[2], option4);
+                                set(4, strange_correct_ans[2], option4,c,w);
                                 break;
                         }
                     }
@@ -1671,19 +1686,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, strange_correct_ans[3], option1);
+                                set(1, strange_correct_ans[3], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, strange_correct_ans[3], option2);
+                                set(2, strange_correct_ans[3], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, strange_correct_ans[3], option3);
+                                set(3, strange_correct_ans[3], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, strange_correct_ans[3], option4);
+                                set(4, strange_correct_ans[3], option4,c,w);
                                 break;
                         }
                     }
@@ -1700,19 +1715,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, strange_correct_ans[4], option1);
+                                set(1, strange_correct_ans[4], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, strange_correct_ans[4], option2);
+                                set(2, strange_correct_ans[4], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, strange_correct_ans[4], option3);
+                                set(3, strange_correct_ans[4], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, strange_correct_ans[4], option4);
+                                set(4, strange_correct_ans[4], option4,c,w);
                                 break;
                         }
                     }
@@ -1729,19 +1744,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, strange_correct_ans[5], option1);
+                                set(1, strange_correct_ans[5], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, strange_correct_ans[5], option2);
+                                set(2, strange_correct_ans[5], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, strange_correct_ans[5], option3);
+                                set(3, strange_correct_ans[5], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, strange_correct_ans[5], option4);
+                                set(4, strange_correct_ans[5], option4,c,w);
                                 break;
                         }
                     }
@@ -1758,19 +1773,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, strange_correct_ans[6], option1);
+                                set(1, strange_correct_ans[6], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, strange_correct_ans[6], option2);
+                                set(2, strange_correct_ans[6], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, strange_correct_ans[6], option3);
+                                set(3, strange_correct_ans[6], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, strange_correct_ans[6], option4);
+                                set(4, strange_correct_ans[6], option4,c,w);
                                 break;
                         }
                     }
@@ -1787,19 +1802,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, strange_correct_ans[7], option1);
+                                set(1, strange_correct_ans[7], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, strange_correct_ans[7], option2);
+                                set(2, strange_correct_ans[7], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, strange_correct_ans[7], option3);
+                                set(3, strange_correct_ans[7], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, strange_correct_ans[7], option4);
+                                set(4, strange_correct_ans[7], option4,c,w);
                                 break;
                         }
                     }
@@ -1808,7 +1823,7 @@ public class Quiz extends AppCompatActivity {
 
             case 9:
                 i.putExtra("final_score", counter2);
-                i.putExtra("hero_name", "doctor_strange");
+                i.putExtra("hero_name", "Doctor Strange");
                 double elapsedMillis = (SystemClock.elapsedRealtime() - timeElapsed.getBase())/1000.0;
                 String timeTaken = Double.toString(elapsedMillis);
                 i.putExtra("time",timeTaken);
@@ -1817,7 +1832,7 @@ public class Quiz extends AppCompatActivity {
 
         }
     }
-    public void black_widow_quiz() {
+    public void black_widow_quiz(final MediaPlayer c, final MediaPlayer w) {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
         findviewID();
@@ -1833,19 +1848,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, natasha_correct_ans[1], option1);
+                                set(1, natasha_correct_ans[1], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, natasha_correct_ans[1], option2);
+                                set(2, natasha_correct_ans[1], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, natasha_correct_ans[1], option3);
+                                set(3, natasha_correct_ans[1], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, natasha_correct_ans[1], option4);
+                                set(4, natasha_correct_ans[1], option4,c,w);
                                 break;
                         }
                     }
@@ -1864,19 +1879,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, natasha_correct_ans[2], option1);
+                                set(1, natasha_correct_ans[2], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, natasha_correct_ans[2], option2);
+                                set(2, natasha_correct_ans[2], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, natasha_correct_ans[2], option3);
+                                set(3, natasha_correct_ans[2], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, natasha_correct_ans[2], option4);
+                                set(4, natasha_correct_ans[2], option4,c,w);
                                 break;
                         }
                     }
@@ -1893,19 +1908,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, natasha_correct_ans[3], option1);
+                                set(1, natasha_correct_ans[3], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, natasha_correct_ans[3], option2);
+                                set(2, natasha_correct_ans[3], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, natasha_correct_ans[3], option3);
+                                set(3, natasha_correct_ans[3], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, natasha_correct_ans[3], option4);
+                                set(4, natasha_correct_ans[3], option4,c,w);
                                 break;
                         }
                     }
@@ -1922,19 +1937,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, natasha_correct_ans[4], option1);
+                                set(1, natasha_correct_ans[4], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, natasha_correct_ans[4], option2);
+                                set(2, natasha_correct_ans[4], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, natasha_correct_ans[4], option3);
+                                set(3, natasha_correct_ans[4], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, natasha_correct_ans[4], option4);
+                                set(4, natasha_correct_ans[4], option4,c,w);
                                 break;
                         }
                     }
@@ -1954,7 +1969,7 @@ public class Quiz extends AppCompatActivity {
 
         }
     }
-    public void guardians_quiz() {
+    public void guardians_quiz(final MediaPlayer c, final MediaPlayer w) {
         Intent i = new Intent(Quiz.this, Score.class);
         ques_and_ans();
         findviewID();
@@ -1970,19 +1985,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, guardians_correct_ans[1], option1);
+                                set(1, guardians_correct_ans[1], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, guardians_correct_ans[1], option2);
+                                set(2, guardians_correct_ans[1], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, guardians_correct_ans[1], option3);
+                                set(3, guardians_correct_ans[1], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, guardians_correct_ans[1], option4);
+                                set(4, guardians_correct_ans[1], option4,c,w);
                                 break;
                         }
                     }
@@ -2001,19 +2016,19 @@ public class Quiz extends AppCompatActivity {
                         switch (i) {
 
                             case R.id.option1:
-                                set(1, guardians_correct_ans[2], option1);
+                                set(1, guardians_correct_ans[2], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, guardians_correct_ans[2], option2);
+                                set(2, guardians_correct_ans[2], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, guardians_correct_ans[2], option3);
+                                set(3, guardians_correct_ans[2], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, guardians_correct_ans[2], option4);
+                                set(4, guardians_correct_ans[2], option4,c,w);
                                 break;
                         }
                     }
@@ -2030,19 +2045,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, guardians_correct_ans[3], option1);
+                                set(1, guardians_correct_ans[3], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, guardians_correct_ans[3], option2);
+                                set(2, guardians_correct_ans[3], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, guardians_correct_ans[3], option3);
+                                set(3, guardians_correct_ans[3], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, guardians_correct_ans[3], option4);
+                                set(4, guardians_correct_ans[3], option4,c,w);
                                 break;
                         }
                     }
@@ -2059,19 +2074,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, guardians_correct_ans[4], option1);
+                                set(1, guardians_correct_ans[4], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, guardians_correct_ans[4], option2);
+                                set(2, guardians_correct_ans[4], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, guardians_correct_ans[4], option3);
+                                set(3, guardians_correct_ans[4], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, guardians_correct_ans[4], option4);
+                                set(4, guardians_correct_ans[4], option4,c,w);
                                 break;
                         }
                     }
@@ -2089,19 +2104,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, guardians_correct_ans[5], option1);
+                                set(1, guardians_correct_ans[5], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, guardians_correct_ans[5], option2);
+                                set(2, guardians_correct_ans[5], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, guardians_correct_ans[5], option3);
+                                set(3, guardians_correct_ans[5], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, guardians_correct_ans[5], option4);
+                                set(4, guardians_correct_ans[5], option4,c,w);
                                 break;
                         }
                     }
@@ -2119,19 +2134,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, guardians_correct_ans[6], option1);
+                                set(1, guardians_correct_ans[6], option1,c,w);
                                 break;
 
                             case R.id.option2:
-                                set(2, guardians_correct_ans[6], option2);
+                                set(2, guardians_correct_ans[6], option2,c,w);
                                 break;
 
                             case R.id.option3:
-                                set(3, guardians_correct_ans[6], option3);
+                                set(3, guardians_correct_ans[6], option3,c,w);
                                 break;
 
                             case R.id.option4:
-                                set(4, guardians_correct_ans[6], option4);
+                                set(4, guardians_correct_ans[6], option4,c,w);
                                 break;
                         }
                     }
@@ -2154,6 +2169,8 @@ public class Quiz extends AppCompatActivity {
     }
 
 
+
+
    // @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -2162,8 +2179,10 @@ public class Quiz extends AppCompatActivity {
 
         ques_and_ans();
         findviewID();
+        final MediaPlayer mCorrect = MediaPlayer.create(Quiz.this,R.raw.correct);
+        final MediaPlayer mWrong = MediaPlayer.create(Quiz.this,R.raw.incorrect);
 
-        timeElapsed = (Chronometer) findViewById(R.id.chronomete);
+        timeElapsed = findViewById(R.id.chronomete);
         if (timeElapsed != null) {
             timeElapsed.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
                 @Override
@@ -2237,19 +2256,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, captain_america_correct_ans[0], option1);
+                                set(1, captain_america_correct_ans[0], option1,mCorrect,mWrong);
                                 break;
 
                             case R.id.option2:
-                                set(2, captain_america_correct_ans[0], option2);
+                                set(2, captain_america_correct_ans[0], option2,mCorrect,mWrong);
                                 break;
 
                             case R.id.option3:
-                                set(3, captain_america_correct_ans[0], option3);
+                                set(3, captain_america_correct_ans[0], option3,mCorrect,mWrong);
                                 break;
 
                             case R.id.option4:
-                                set(4, captain_america_correct_ans[0], option4);
+                                set(4, captain_america_correct_ans[0], option4,mCorrect,mWrong);
                                 break;
 
                         }
@@ -2261,10 +2280,9 @@ public class Quiz extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
 
-
                             case R.id.next_button:
                                 counter1++;
-                                captain_america_quiz();
+                                captain_america_quiz(mCorrect,mWrong);
                                 break;
                         }
                         return true;
@@ -2300,19 +2318,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, iron_man_correct_ans[0], option1);
+                                set(1, iron_man_correct_ans[0], option1,mCorrect,mWrong);
                                 break;
 
                             case R.id.option2:
-                                set(2, iron_man_correct_ans[0], option2);
+                                set(2, iron_man_correct_ans[0], option2,mCorrect,mWrong);
                                 break;
 
                             case R.id.option3:
-                                set(3, iron_man_correct_ans[0], option3);
+                                set(3, iron_man_correct_ans[0], option3,mCorrect,mWrong);
                                 break;
 
                             case R.id.option4:
-                                set(4, iron_man_correct_ans[0], option4);
+                                set(4, iron_man_correct_ans[0], option4,mCorrect,mWrong);
                                 break;
 
                         }
@@ -2326,7 +2344,7 @@ public class Quiz extends AppCompatActivity {
                         switch (item.getItemId()) {
                             case R.id.next_button:
                                 counter1++;
-                                iron_man_quiz();
+                                iron_man_quiz(mCorrect,mWrong);
                                 break;
                         }
                         return true;
@@ -2361,19 +2379,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, hulk_correct_ans[0], option1);
+                                set(1, hulk_correct_ans[0], option1,mCorrect,mWrong);
                                 break;
 
                             case R.id.option2:
-                                set(2, hulk_correct_ans[0], option2);
+                                set(2, hulk_correct_ans[0], option2,mCorrect,mWrong);
                                 break;
 
                             case R.id.option3:
-                                set(3, hulk_correct_ans[0], option3);
+                                set(3, hulk_correct_ans[0], option3,mCorrect,mWrong);
                                 break;
 
                             case R.id.option4:
-                                set(4, hulk_correct_ans[0], option4);
+                                set(4, hulk_correct_ans[0], option4,mCorrect,mWrong);
                                 break;
 
                         }
@@ -2386,7 +2404,7 @@ public class Quiz extends AppCompatActivity {
 
                             case R.id.next_button:
                                 counter1++;
-                                hulk_quiz();
+                                hulk_quiz(mCorrect,mWrong);
                                 break;
                         }
                         return true;
@@ -2421,19 +2439,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, spider_correct_ans[0], option1);
+                                set(1, spider_correct_ans[0], option1,mCorrect,mWrong);
                                 break;
 
                             case R.id.option2:
-                                set(2, spider_correct_ans[0], option2);
+                                set(2, spider_correct_ans[0], option2,mCorrect,mWrong);
                                 break;
 
                             case R.id.option3:
-                                set(3, spider_correct_ans[0], option3);
+                                set(3, spider_correct_ans[0], option3,mCorrect,mWrong);
                                 break;
 
                             case R.id.option4:
-                                set(4, spider_correct_ans[0], option4);
+                                set(4, spider_correct_ans[0], option4,mCorrect,mWrong);
                                 break;
 
                         }
@@ -2446,7 +2464,7 @@ public class Quiz extends AppCompatActivity {
 
                             case R.id.next_button:
                                 counter1++;
-                                spider_man_quiz();
+                                spider_man_quiz(mCorrect,mWrong);
                                 break;
                         }
                         return true;
@@ -2481,19 +2499,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, thor_correct_ans[0], option1);
+                                set(1, thor_correct_ans[0], option1,mCorrect,mWrong);
                                 break;
 
                             case R.id.option2:
-                                set(2, thor_correct_ans[0], option2);
+                                set(2, thor_correct_ans[0], option2,mCorrect,mWrong);
                                 break;
 
                             case R.id.option3:
-                                set(3, thor_correct_ans[0], option3);
+                                set(3, thor_correct_ans[0], option3,mCorrect,mWrong);
                                 break;
 
                             case R.id.option4:
-                                set(4, thor_correct_ans[0], option4);
+                                set(4, thor_correct_ans[0], option4,mCorrect,mWrong);
                                 break;
 
                         }
@@ -2506,7 +2524,7 @@ public class Quiz extends AppCompatActivity {
                         switch (item.getItemId()) {
                             case R.id.next_button:
                                 counter1++;
-                                thor_quiz();
+                                thor_quiz(mCorrect,mWrong);
                                 break;
                         }
                         return true;
@@ -2541,19 +2559,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, strange_correct_ans[0], option1);
+                                set(1, strange_correct_ans[0], option1,mCorrect,mWrong);
                                 break;
 
                             case R.id.option2:
-                                set(2, strange_correct_ans[0], option2);
+                                set(2, strange_correct_ans[0], option2,mCorrect,mWrong);
                                 break;
 
                             case R.id.option3:
-                                set(3, strange_correct_ans[0], option3);
+                                set(3, strange_correct_ans[0], option3,mCorrect,mWrong);
                                 break;
 
                             case R.id.option4:
-                                set(4, strange_correct_ans[0], option4);
+                                set(4, strange_correct_ans[0], option4,mCorrect,mWrong);
                                 break;
 
                         }
@@ -2566,7 +2584,7 @@ public class Quiz extends AppCompatActivity {
                         switch (item.getItemId()) {
                             case R.id.next_button:
                                 counter1++;
-                                doctor_strange_quiz();
+                                doctor_strange_quiz(mCorrect,mWrong);
                                 break;
                         }
                         return true;
@@ -2601,19 +2619,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, natasha_correct_ans[0], option1);
+                                set(1, natasha_correct_ans[0], option1,mCorrect,mWrong);
                                 break;
 
                             case R.id.option2:
-                                set(2, natasha_correct_ans[0], option2);
+                                set(2, natasha_correct_ans[0], option2,mCorrect,mWrong);
                                 break;
 
                             case R.id.option3:
-                                set(3, natasha_correct_ans[0], option3);
+                                set(3, natasha_correct_ans[0], option3,mCorrect,mWrong);
                                 break;
 
                             case R.id.option4:
-                                set(4, natasha_correct_ans[0], option4);
+                                set(4, natasha_correct_ans[0], option4,mCorrect,mWrong);
                                 break;
 
                         }
@@ -2626,7 +2644,7 @@ public class Quiz extends AppCompatActivity {
                         switch (item.getItemId()) {
                             case R.id.next_button:
                                 counter1++;
-                                black_widow_quiz();
+                                black_widow_quiz(mCorrect,mWrong);
                                 break;
                         }
                         return true;
@@ -2661,19 +2679,19 @@ public class Quiz extends AppCompatActivity {
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         switch (i) {
                             case R.id.option1:
-                                set(1, guardians_correct_ans[0], option1);
+                                set(1, guardians_correct_ans[0], option1,mCorrect,mWrong);
                                 break;
 
                             case R.id.option2:
-                                set(2, guardians_correct_ans[0], option2);
+                                set(2, guardians_correct_ans[0], option2,mCorrect,mWrong);
                                 break;
 
                             case R.id.option3:
-                                set(3, guardians_correct_ans[0], option3);
+                                set(3, guardians_correct_ans[0], option3,mCorrect,mWrong);
                                 break;
 
                             case R.id.option4:
-                                set(4, guardians_correct_ans[0], option4);
+                                set(4, guardians_correct_ans[0], option4,mCorrect,mWrong);
                                 break;
 
                         }
@@ -2687,14 +2705,12 @@ public class Quiz extends AppCompatActivity {
 
                             case R.id.next_button:
                                 counter1++;
-                                guardians_quiz();
+                                guardians_quiz(mCorrect,mWrong);
                                 break;
                         }
                         return true;
                     }
                 });
-
-                break;
 
 
         }
